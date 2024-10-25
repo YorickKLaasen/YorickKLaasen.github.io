@@ -1,28 +1,34 @@
 html {
     scroll-behavior: smooth;
   }
+
   @media (max-width: 768px) {
     .codeContent {
       flex-direction: column;
     }
   }
+
   .menuContent {
     display: flex;
     align-items: flex-start;
     gap: 20px;
   }
+
   .menuContent img {
     flex-shrink: 0;
   }
+
   .menuContent p {
     max-width: 500px;
   }
+
   body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #00FFFF, #FF1493);
     min-height: 100vh;
     margin: 0;
   }
+
     .sidebar {
       position: fixed;
       right: 10px;
@@ -31,6 +37,7 @@ html {
       flex-direction: column;
       align-items: flex-end;
   }
+
   .sidebar .btn {
       width: 150px;
       margin-bottom: 10px;
@@ -41,19 +48,26 @@ html {
       font-size: 14px;
       border: none;
   }
+
   .sidebar .btn:hover {
       background: linear-gradient(90deg, #ff00007d, #0400ff75);
   }
+
   .sidebar .btn span {
     background: linear-gradient(90deg, #ff00ff, #00ffcc);
     color: transparent;
   }
+  .MycontributionsTitle {
+    text-align: center;
+    margin: 0 auto;
+}
   .shopContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
 .shopContent h3 {
     margin-bottom: 20px;
 }
@@ -62,9 +76,11 @@ html {
   justify-content: space-evenly;
   margin: 0 2px;
 }
+
 .shopItems {
   align-items: center;
 }
+
 .codeBox {
   display: flex;
   flex-wrap: wrap;
