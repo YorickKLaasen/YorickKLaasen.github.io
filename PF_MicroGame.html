@@ -1,183 +1,206 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
-        <link rel="stylesheet" 
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" 
         type="text/css" 
         href="Css/PFMicro.css">
-    </head>
+</head>
+
 <body>
-  <div class="sidebar">
-    <h5 style="letter-spacing: 5px;">Scrollbar</h5>
-    <a href="#Information" class="btn btn-outline-light mb-2">Information</a>
-    <a href="#GameConcept" class="btn btn-outline-light mb-2">Game Concept</a>
-    <a href="#GameTrailer" class="btn btn-outline-light mb-2">Game Trailer</a>
-    <a href="#Mycontributions" class="btn btn-outline-light mb-2">My Contributions</a>
-    <a href="#Mycontributions" class="btn btn-outline-light mb-2">Main Menu</a>
-    <a href="#ShopDesign" class="btn btn-outline-light mb-2">Shop Design</a>
-    <a href="#MyCode" class="btn btn-outline-light mb-2">My Code</a>
-</div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue;">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand" href="index.html">Home Page</a>
+            <a class="navbar-brand" href="Aboutme.html">About Me</a>
+            <a class="navbar-brand" href="Portfolio.html">Portfolio</a>
+            <a class="navbar-brand" href="MyProjects.html">My Projects</a>
+        </div>
+        </nav>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue;">
-<div class="container d-flex justify-content-between">
-    <a class="navbar-brand" href="index.html">Home Page</a>
-    <a class="navbar-brand" href="Portfolio.html">Portfolio</a>
-    <a class="navbar-brand" href="MyProjects.html">My Projects</a>
-</div>
-</nav>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Tabs bovenaan -->
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="information-tab" data-bs-toggle="tab" href="#Information" role="tab" aria-controls="Information" aria-selected="true">Information</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="gameConcept-tab" data-bs-toggle="tab" href="#GameConcept" role="tab" aria-controls="GameConcept" aria-selected="false">Game Concept</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="gameTrailer-tab" data-bs-toggle="tab" href="#GameTrailer" role="tab" aria-controls="GameTrailer" aria-selected="false">GameTrailer</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="mainMenu-tab" data-bs-toggle="tab" href="#MainMenu" role="tab" aria-controls="MainMenu" aria-selected="false"> My Main Menu Design</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="shopDesign-tab" data-bs-toggle="tab" href="#ShopDesign" role="tab" aria-controls="ShopDesign" aria-selected="false"> My Shop Design</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="myCode-tab" data-bs-toggle="tab" href="#MyCode" role="tab" aria-controls="MyCode" aria-selected="false">My Code</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Tab Content -->
+                <div class="col-12 mt-3">
 
-<div class="main" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h1>Neon Dasher</h1>
-    <img src="images/NeonDasherLogo.jpg" alt="Placeholder voor Cover Art" style="width: 500px; height:500px;">
-    <h6>Made With: Sam Schutten, Leon Bijker, Thom Hermelink</h6>
-    <h2 id="Information">Project information</h2>
-    <p>this game is called Neon Dasher the theme is Neon. the goal is to get as far as possible without crashing/dying. and use abilities to survive</p>
-    <p>you are a car which drives in a neon themed. you keep going faster making the game harder the longer you last.</p>
-    <p>you can collect crystals which is the currency with which you can buy Cosmetics,Themes and Abilities in the Shop.</p>
-    <p>The Cosmetics are to Customize your car with different skins or colors</p>
-    <p>With The Themes you can change the scenery around you so that you can change it if you dont like the current theme.</p>
-    <p>Abilities give you a different way to play the game like Slow Down which slows down your game when its to fast</p>
-    <h1 id="GameTrailer">Game Trailer</h1>
-    <video width="600" height="500" controls>
-        <source src="images/GameTrailer.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-  
-  <div class="concept" id="GameConcept">
-    <h2>GameConcept</h2>
-    <p style="max-width: 800px;">The concept of the game is a Infinite Runner type of game.
-      where you have to try and survive for as long as possible to get a higher score.
-      you have to avoid Obstacles along the way and you have a certain amount of lives that go down when you hit an obstacle.
-      you can collect Crystals along the way which you can use in the shop for Abilities,Cosmetics and Themes.
-      you also have Achievements/Challenges which you can go for to get rewards.</p>
-  </div>
+                    <div class="tab-content" id="myTabContent">
 
-  <div class="contributions" id="Mycontributions"></div></div>
-  <div class="MycontributionsTitle">
-      <h2>My Contributions</h2>
-  </div>
-    <h3>Main Menu Design</h3>
-    <div class="menuContent">
-      <img src="images/MainMenu.jpg" alt="MainMenu" style="width: 400px; height:650px;">
-      <div class="textContent">
-        <h4>Main Menu Info</h4>
-        <h6>This is the Homescreen/MainMenu design i made.</h6>
-        <p>it has 4 buttons the Start/Continue Game, Shop, Statistics and Quit</p>
-        <p>the Start/Continue Game button lets you play the game or continue the game if you had already played it before</p>
-        <p>the Shop button sends you to the shop where you can buy cosmetics and abilities for a better playing experience</p>
-        <p>the Statistics button sends you to the Statistics Menu where you can see your player statistics and Achievement Milestones</p>
-        <p>and the Quit button closes the game when you are done playing.</p>
-        <p>in the top left you can see how many crystals you have earned and own right now you can spend them in the shop</p>
-        <p>and as last you can see our logo of the game with the Title</p>
-      </div>
-    </div>
-  </div>
+                        <!-- Information Tab -->
+                        <div class="tab-pane fade show active" id="Information" role="tabpanel" aria-labelledby="information-tab">
+                            <h1>Neon Dasher</h1>
+                            <div class="informationContainer">
+                                <img src="images/NeonDasherLogo.jpg" alt="Placeholder voor Cover Art" style="width: 500px; height: 500px;">
+                                <div class="informationContent">
+                                    <h2 id="Information">Project information</h2>
+                                    <p>this game is called Neon Dasher the theme is Neon. the goal is to get as far as possible without crashing/dying. and use abilities to survive</p>
+                                    <p>you are a car which drives in a neon themed. you keep going faster making the game harder the longer you last.</p>
+                                    <p>you can collect crystals which is the currency with which you can buy Cosmetics,Themes and Abilities in the Shop.</p>
+                                    <p>The Cosmetics are to Customize your car with different skins or colors</p>
+                                    <p>With The Themes you can change the scenery around you so that you can change it if you dont like the current theme.</p>
+                                    <p>Abilities give you a different way to play the game like Slow Down which slows down your game when its to fast</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Game Concept Tab -->
+                        <div class="tab-pane fade" id="GameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
+                            <h2>GameConcept</h2>
+                            <p style="max-width: 800px;">The concept of the game is a Infinite Runner type of game.
+                            where you have to try and survive for as long as possible to get a higher score.
+                            you have to avoid Obstacles along the way and you have a certain amount of lives that go down when you hit an obstacle.
+                            you can collect Crystals along the way which you can use in the shop for Abilities,Cosmetics and Themes.
+                            you also have Achievements/Challenges which you can go for to get rewards.</p>
+                        </div>
 
-  <div class="shopContent" id="ShopDesign">
-    <h3>Shop Design</h3>
-    <div class="shopItems">
-      <img src="images/CosmeticShop.jpg" alt="Cosmetic Shop" style="width: 400px; height:650px;">
-      <img src="images/Shop.jpg" alt="Shop" style="width: 400px; height:650px;">
-      <img src="images/AbilityShop.jpg" alt="Ability Shop" style="width: 400px; height:650px;">
-    </div>
-    <h4>About the Shop</h4>
-    <p>This is the Shop i made in this project where you can buy Skins and Abilities/PowerUps</p>
-    <p>on the left is the Cosmetics Shop where you can buy skins to customize your avatar/car</p>
-    <p>on the right is the Abilities Shop where you can buy abilities so that you last longer in the game</p>
-    <p>in the middle is the main menu of the shop with the buttons to go to the panel of the chosen shop</p>
-  </div>
-  <div class="codeBox" id="MyCode">
-    <h3>My Code</h3>
-    <div class="codeContent">
-      <h4>CarCollision.cs</h4>
-        <div class="codeContainer">
-          <pre><code class="language-csharp">
+                        <div class="tab-pane fade" id="GameTrailer" role="tabpanel" aria-labelledby="gameTrailer-tab">
+                            <h1 id="GameTrailer">Game Trailer</h1>
+                            <video width="600" height="500" controls>
+                                <source src="images/GameTrailer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+    
+                        <!-- Main Menu Tab -->
+                        <div class="tab-pane fade" id="MainMenu" role="tabpanel" aria-labelledby="mainMenu-tab">
+                            <div class="menuContent">
+                                <img src="images/MainMenu.jpg" alt="MainMenu" style="width: 400px; height:650px;">
+                                <div class="textContent">
+                                  <h4>Main Menu Info</h4>
+                                  <h6>This is the Homescreen/MainMenu design i made.</h6>
+                                  <p>it has 4 buttons the Start/Continue Game, Shop, Statistics and Quit</p>
+                                  <p>the Start/Continue Game button lets you play the game or continue the game if you had already played it before</p>
+                                  <p>the Shop button sends you to the shop where you can buy cosmetics and abilities for a better playing experience</p>
+                                  <p>the Statistics button sends you to the Statistics Menu where you can see your player statistics and Achievement Milestones</p>
+                                  <p>and the Quit button closes the game when you are done playing.</p>
+                                  <p>in the top left you can see how many crystals you have earned and own right now you can spend them in the shop</p>
+                                  <p>and as last you can see our logo of the game with the Title</p>
+                                </div>
+                              </div>
+                        </div>
+    
+                        <!-- Shop Design Tab -->
+                        <div class="tab-pane fade" id="ShopDesign" role="tabpanel" aria-labelledby="shopDesign-tab">
+                            <h3>Shop Design</h3>
+                            <div class="shopItems">
+                                <img src="images/CosmeticShop.jpg" alt="Cosmetic Shop" style="width: 400px; height:650px;">
+                                <img src="images/Shop.jpg" alt="Shop" style="width: 400px; height:650px;">
+                                <img src="images/AbilityShop.jpg" alt="Ability Shop" style="width: 400px; height:650px;">
+                              </div>
+                              <h4>About the Shop</h4>
+                              <p>This is the Shop i made in this project where you can buy Skins and Abilities/PowerUps</p>
+                              <p>on the left is the Cosmetics Shop where you can buy skins to customize your avatar/car</p>
+                              <p>on the right is the Abilities Shop where you can buy abilities so that you last longer in the game</p>
+                              <p>in the middle is the main menu of the shop with the buttons to go to the panel of the chosen shop</p>
+                            </div>
+                        </div>
+    
+                        <!-- My Code Tab -->
+                        <div class="tab-pane fade" id="MyCode" role="tabpanel" aria-labelledby="myCode-tab">
+                            <div class="codeBox" id="MyCode">
+                            <h3>My Code</h3>
+                            <div class="codeContent">
+                                <h4>CarCollision.cs</h4>
+                                  <div class="codeContainer">
+                                  <pre><code class="language-csharp">
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class CarCollision : MonoBehaviour
-{
-    [SerializeField] private PlayerAbilities playerAbilities;
-    [SerializeField] GameOverScreen gameOver;
-    [SerializeField] TextMeshProUGUI livesText;
-
-    //can hit an object 3 times in a certain time before "dieing"
-    public int PlayerLives = 3;
-    GameObject MapGenerator;
-    public bool PlayerDied = false;
-
-    private void Start()
+    
+    public class CarCollision : MonoBehaviour
     {
-        livesText.text = "Lives:" + PlayerLives;//laat zien hoeveel levens je hebt
-        MapGenerator = GameObject.FindGameObjectWithTag("MapGenerator");//zoekt een GameObject met deze tag
-    }
-    private void Update()
-    {
-        if (!playerAbilities.isFlying)
+        [SerializeField] private PlayerAbilities playerAbilities;
+        [SerializeField] GameOverScreen gameOver;
+        [SerializeField] TextMeshProUGUI livesText;
+    
+        //can hit an object 3 times in a certain time before "dying"
+        public int PlayerLives = 3;
+        GameObject MapGenerator;
+        public bool PlayerDied = false;
+    
+        private void Start()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);//pakt alle colliders om de player heen
-            foreach (Collider2D collider in colliders)//loopt door elke collider en kijkt of het de tag void heeft
+            livesText.text = "Lives:" + PlayerLives; // Show remaining lives
+            MapGenerator = GameObject.FindGameObjectWithTag("MapGenerator"); // Find MapGenerator by tag
+        }
+    
+        private void Update()
+        {
+            if (!playerAbilities.isFlying)
             {
-                if (collider.CompareTag("Void"))
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f); // Get nearby colliders
+                foreach (Collider2D collider in colliders)
                 {
-                    StartCoroutine(VoidTimer());
-                    break;
+                    if (collider.CompareTag("Void"))
+                    {
+                        StartCoroutine(VoidTimer());
+                        break;
+                    }
                 }
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Obstacles"))
+    
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (playerAbilities.isInvincible)//returned als de player invincible is dus niet geraakt kan worden
+            if (collision.gameObject.CompareTag("Obstacles"))
             {
-                return;
-            }
-            if (!playerAbilities.isInvincible)//als de player niet invincible is
-            {
+                if (playerAbilities.isInvincible) return;
+    
                 PlayerLives--;
-                livesText.text = "Lives:" + PlayerLives;//geeft livesText de waarde van PlayerLives
+                livesText.text = "Lives:" + PlayerLives;
                 if (PlayerLives <= 0)
                 {
-                    MapGenerator.GetComponent<MapGeneration>().RemoveItemFromActiveList(collision.gameObject);//zoekt de MapGeneration component en haalt het gecollide object uit de list
+                    MapGenerator.GetComponent<MapGeneration>().RemoveItemFromActiveList(collision.gameObject);
                     PlayerDied = true;
                     Time.timeScale = 0f;
-                    gameOver.Died();//als de player dood is laad die de gameover screen in
+                    gameOver.Died();
                 }
+                Destroy(collision.gameObject);
             }
-            Destroy(collision.gameObject);//destroyed het gecollide obstacle gameobject
-
-        }
-        if (collision.gameObject.CompareTag("Void"))//kijkt of het gecollide object als void is getagged
-        {
-            if (!playerAbilities.isFlying)//als de player niet vliegt
+            if (collision.gameObject.CompareTag("Void") && !playerAbilities.isFlying)
             {
                 StartCoroutine(VoidTimer());
             }
         }
-    }
-    IEnumerator VoidTimer()
-    {
-        yield return new WaitForSeconds(0.5f);//timer om te reageren voordat je doodgaat
-        Time.timeScale = 0f;//zet de timescale op 0
-        gameOver.Died();//laad de gameOverscreen zien
-    }
-}
-        </code></pre>         
-        </div>
-    </div>
-    <div class="codeContent">
-      <h4>ShopMenu.cs</h4>
-        <div class="codeContainer">
-          <pre><code class="language-csharp">
+    
+        IEnumerator VoidTimer()
+        {
+            yield return new WaitForSeconds(0.5f);
+            Time.timeScale = 0f;
+            gameOver.Died();
+        }
+    } 
+                                  </code></pre>         
+                                  </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>ShopMenu.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -268,13 +291,13 @@ public class ShopMenu : MonoBehaviour
         }
     }
 }
-          </code></pre>
-        </div>
-    </div>
-    <div class="codeContent">
-      <h4>ShopData.cs</h4>
-      <div class="codeContainer">
-        <pre><code class="language-csharp">
+                                    </code></pre>
+                                </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>ShopData.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -296,13 +319,13 @@ public struct ShopData
     public int flightAmount;
     public string equippedSkin;
 }
-        </code></pre>
-      </div>
-    </div>
-    <div class="codeContent">
-      <h4>ShopDataHandler.cs</h4>
-      <div class="codeContainer">
-        <pre><code class="language-csharp">
+                                    </code></pre>
+                                </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>ShopDataHandler.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -363,13 +386,13 @@ public class ShopDataHandler : MonoBehaviour
         File.WriteAllText(datafile, jsonString);
     }
 }
-        </code></pre>
-      </div>
-    </div>
-    <div class="codeContent">
-      <h4>SkinLoader.cs</h4>
-      <div class="codeContainer">
-        <pre><code class="language-csharp">
+                                    </code></pre>
+                                </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>SkinLoader.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -425,13 +448,13 @@ public class SkinLoader : MonoBehaviour
         }
     }
 }
-        </code></pre>
-      </div>
-    </div>
-    <div class="codeContent">
-      <h4>PlayerAbilities.cs</h4>
-      <div class="codeContainer">
-        <pre><code class="language-csharp">
+                                    </code></pre>
+                                </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>PlayerAbilities.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -451,11 +474,10 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] TextMeshProUGUI destroyText, slowDownText, InvincibleText, flightText;
     public ShopDataHandler shopHandler;
     ShopData shopData;
-    //alle errors van de console uit dit script negeren graag
     private void Start()
     {
         LoadShopData();
-        fireButton.onClick.AddListener(ObstacleDestroyUse);//kaboom knop
+        fireButton.onClick.AddListener(ObstacleDestroyUse);
         destroyText.text = "Left: " + shopData.obstacleDestroyAmount.ToString();
         slowDownText.text = "Left: " + shopData.slowDownAmount.ToString();
         InvincibleText.text = "Left: " + shopData.invincibilityAmount.ToString();
@@ -470,7 +492,7 @@ public class PlayerAbilities : MonoBehaviour
             string jsonString = File.ReadAllText(shopDataPath);
             shopData = JsonUtility.FromJson<ShopData>(jsonString);
         }
-        else//als er geen shopData is gevonden
+        else
         {
             print("Geen shopData gevonden, nieuwe standaardwaarden worden aangemaakt.");
         }
@@ -483,32 +505,32 @@ public class PlayerAbilities : MonoBehaviour
             {
                 GameObject projectile = Instantiate(projectilePrefab, new Vector3(firePoint.position.x, firePoint.position.y, 0), firePoint.rotation);//Instantiate de bullet
 
-                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();//haalt de rigidbody van de bullet op
-                if (rb != null)//checkt of de rigid body null is
+                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                if (rb != null)
                 {
-                    rb.velocity = firePoint.up * projectileSpeed;//geeft de Rigidbody een velocity
+                    rb.velocity = firePoint.up * projectileSpeed;
                 }
-                shopData.obstacleDestroyAmount -= 1;//haalt -1 van de obstacleDestroyAmount waarde
+                shopData.obstacleDestroyAmount -= 1;
                 shopHandler.shopData = shopData;
                 shopHandler.SaveShopDataToJson();//slaat de json op
-                destroyText.text = "Left: " + shopData.obstacleDestroyAmount.ToString();//print het nieuwe aantal uit
-                Destroy(projectile, 4f);//destroyed het na 4 seconden
+                destroyText.text = "Left: " + shopData.obstacleDestroyAmount.ToString();
+                Destroy(projectile, 4f);
             }
-            else//print deze error uit als de kogel of firepoint niet zijn geassigned
+            else
             {
                 Debug.LogError("Projectile prefab or firePoint is not assigned.");
             }
         }
     }
-    public void SlowDownUse()//als de player de slowDown ability gebruikt
+    public void SlowDownUse()
     {
         if (shopData.slowDownAmount >= 1)
         {
-            shopData.slowDownAmount -= 1;//verandert de waarde met -1 van slowDownAmount
+            shopData.slowDownAmount -= 1;
             shopHandler.shopData = shopData;
-            shopHandler.SaveShopDataToJson();//slaat de data op
-            slowDownText.text = "Left: " + shopData.slowDownAmount.ToString();//update de slowDowntext met de nieuwe waarde
-            StartCoroutine(SlowDownTimer());//begint een timer voor de duratie van de ability
+            shopHandler.SaveShopDataToJson();
+            slowDownText.text = "Left: " + shopData.slowDownAmount.ToString();
+            StartCoroutine(SlowDownTimer());
         }
     }
     public void InvincibilityUse()
@@ -536,15 +558,15 @@ public class PlayerAbilities : MonoBehaviour
 
     IEnumerator SlowDownTimer()
     {
-        Time.timeScale = 0.55f;//verandert hoe snel alles gaat naar 0.55f = 55% van normaal
-        yield return new WaitForSeconds(4);//duratie van de ability
-        Time.timeScale = 1f;//zet de timeScale weer terug naar normaal
+        Time.timeScale = 0.55f;
+        yield return new WaitForSeconds(4);
+        Time.timeScale = 1f;
     }
     IEnumerator InvincibilityTimer()
     {
-        isInvincible = true;//zet de isInvincible bool op true
-        yield return new WaitForSeconds(5f);//duratie van de ability
-        isInvincible = false;//zet de bool weer op false
+        isInvincible = true;
+        yield return new WaitForSeconds(5f);
+        isInvincible = false;
     }
     IEnumerator FlightTimer()
     {
@@ -553,13 +575,13 @@ public class PlayerAbilities : MonoBehaviour
         isFlying = false;
     }
 }
-        </code></pre>
-      </div>
-    </div>
-    <div class="codeContent">
-      <h4>ProjectileCollision.cs</h4>
-      <div class="codeContainer">
-        <pre><code class="language-csharp">
+                                    </code></pre>
+                                </div>
+                              </div>
+                              <div class="codeContent">
+                                <h4>ProjectileCollision.cs</h4>
+                                <div class="codeContainer">
+                                    <pre><code>
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -580,10 +602,12 @@ public class ProjectileCollision : MonoBehaviour
         }
     }
 }
-        </code></pre>
-      </div>
-    </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.js"></script>
+                                    </code></pre>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
-</html>
