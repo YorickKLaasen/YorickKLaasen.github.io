@@ -8,6 +8,16 @@ html {
     }
   }
 
+  .gameContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.gameConcept {
+  flex: 1;
+  max-width: 600px;
+}
+
   .informationContainer {
     display: flex;
     align-items: flex-start;
@@ -38,12 +48,14 @@ html {
     max-width: 500px;
   }
 
+
   body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #00FFFF, #FF1493);
     min-height: 100vh;
     margin: 0;
   }
+  
 .codeBox {
   display: flex;
   flex-wrap: wrap;

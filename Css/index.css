@@ -1,0 +1,9 @@
+body {
+    background: linear-gradient(to bottom, #ffffff, #5a5a5a);
+}
+.carousel-inner {
+    overflow: hidden;
+}
+.carousel-item img {
+    object-fit: contain;
+}

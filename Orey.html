@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="Css/Orey.css">
+        <script src="JavaScript/contact.js" defer></script>
+    </head>
+<body style="background-image: url('images/OreyLogo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    color:white;">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue;">
+    <div class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="index.html">Home Page</a>
+        <a class="navbar-brand" href="Aboutme.html">About Me</a>
+        <a class="navbar-brand" href="MyProjects.html">My Projects</a>
+    </div>
+</nav>
+<div class="container mt-5">
+            
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="gameConcept-tab" data-bs-toggle="tab" href="#gameConcept" role="tab" aria-controls="gameConcept" aria-selected="true">Game Concept</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="sprites-tab" data-bs-toggle="tab" href="#sprites" role="tab" aria-controls="sprites" aria-selected="false">Art</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="game-tab" data-bs-toggle="tab" href="#game" role="tab" aria-controls="game" aria-selected="false">Play</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="code-tab" data-bs-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="false">Code</a>
+        </li>
+    </ul>
+
+    
+    <div class="tab-content" id="myTabContent">
+        
+        <!-- GameConcept Tab -->
+        <div class="tab-pane fade show active" id="gameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
+            <h3>GameConcept</h3>
+            <div class="Conceptcontent">
+                <p style="max-width: 800px; margin-bottom: 346px;">The concept of the game is to get the highest score possible just like in arcade games. <br>
+                    You get a higher score the longer you survive. there is obstacles that you have to avoid since they slow you down.
+                    <br>If you slow down to much a miner will catch you and you will lose. <br>
+                    There is also a Boss that appears at a score of 1000. <br>
+                    You can also choose to unlock achievements which dont give a reward but some people enjoy achievement hunting.</p>
+            </div>
+        </div>
+
+        <!--Art Tab-->
+        <div class="tab-pane fade" id="sprites" role="tabpanel" aria-labelledby="sprites-tab">
+            <h3>Art</h3>
+            <div class="Artcontent">
+                <div class="images-container">
+                    <img src="images/OreySprites1.png" alt="Orey Sprite 1">
+                    <img src="images/OreySprites2.png" alt="Orey Sprite 2">
+                </div>
+                <div class="text-container">
+                    <h4>Game Sprites:</h4>
+                    <p>These are the sprites used in the Game.</p>
+                    <h6>The Sprites Contain:</h6>
+                    <ul>
+                        <li>Player Walk Animation</li>
+                        <li>Player Slide Animation</li>
+                        <li>Player Death Animation</li>
+                        <li>Player Jump Animation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--Play Tab-->
+        <div class="tab-pane fade" id="game" role="tabpanel" aria-labelledby="game-tab">
+            <h3>Play</h3>
+            <div class="Playcontent">
+                <p></p>
+                <h4><a href="https://play.unity.com/en/games/62b825f9-e216-4f3a-a8ed-8295a2e10445/orey">Orey</a></h4>
+            </div>
+        </div>
+         <!--Code Tab-->
+        <div class="tab-pane fade" id="code" role="tabpanel" aria-labelledby="code-tab">
+            <h3>My Code</h3>
+            <div class="Codecontent">
+                <p>Placeholder</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue; margin-top:10px;">
+    <div class="container d-flex justify-content-between">
+        <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="0354855@student.rocvantwente.nl" class="navbar-brand"style="padding: 3px;">School E-mail</a>
+        <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="06-18883716"class="navbar-brand" style="padding:3px;">Phonenumber</a>
+        <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="yorick.klaasen@gmail.com" class="navbar-brand"style="padding: 3px;">E-mail</a>
+    </div>
+</nav>
+</body>

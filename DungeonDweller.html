@@ -6,15 +6,59 @@
         <link rel="stylesheet" 
         type="text/css" 
         href="Css/DungeonDweller.css">
+        <script src="JavaScript/contact.js" defer></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue;">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="index.html">Home Page</a>
             <a class="navbar-brand" href="Aboutme.html">About Me</a>
-            <a class="navbar-brand" href="Portfolio.html">Portfolio</a>
             <a class="navbar-brand" href="MyProjects.html">My Projects</a>
         </div>
+        </nav>
+        <div class="container mt-5">
+            
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="gameConcept-tab" data-bs-toggle="tab" href="#gameConcept" role="tab" aria-controls="gameConcept" aria-selected="true">Game Concept</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="sprites-tab" data-bs-toggle="tab" href="#sprites" role="tab" aria-controls="sprites" aria-selected="false">Art</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="code-tab" data-bs-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="false">Code</a>
+                </li>
+            </ul>
+    
+            
+            <div class="tab-content" id="myTabContent">
+                
+                <!-- GameConcept Tab -->
+                <div class="tab-pane fade show active" id="gameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
+                    <h3>GameConcept</h3>
+                    <p>Dit is de inhoud voor het Game Concept tabblad. Hier kun je het algemene idee van je game beschrijven, inclusief gameplay-mechanics, doelen, en verhaallijn.</p>
+                </div>
+
+                <!--Art Tab-->
+                <div class="tab-pane fade" id="sprites" role="tabpanel" aria-labelledby="sprites-tab">
+                    <h3>Art</h3>
+                    <p>Dit is de inhoud voor het Sprites tabblad. Hier kun je uitleggen welke sprites je hebt gemaakt voor je game, zoals personages, vijanden, items, enzovoort.</p>
+                </div>
+
+                <!--Code Tab-->
+                <div class="tab-pane fade" id="code" role="tabpanel" aria-labelledby="code-tab">
+                    <h3>Code</h3>
+                    <p>Dit is de inhoud voor het Code tabblad. Hier kun je delen van je code tonen, bijvoorbeeld scripts die je hebt geschreven voor de game mechanics, beweging, of andere functies.</p>
+                </div>
+            </div>
+        </div>
+        <script src="/JavaScript/DungeonDweller.js"></script>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue; margin-top:100px;">
+            <div class="container d-flex justify-content-between">
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="0354855@student.rocvantwente.nl" class="navbar-brand"style="padding: 3px;">School E-mail</a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="06-18883716"class="navbar-brand" style="padding:3px;">Phonenumber</a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="yorick.klaasen@gmail.com" class="navbar-brand"style="padding: 3px;">E-mail</a>
+            </div>
         </nav>
     </body>
 </html>

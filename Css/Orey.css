@@ -1,0 +1,28 @@
+.Artcontent, .Conceptcontent, .Playcontent, .Codecontent {
+    background-color: rgba(106, 106, 106, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Artcontent {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.Artcontent .images-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Artcontent .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.Artcontent h4, .Artcontent p {
+    margin: 0;
+    padding: 0;
+}

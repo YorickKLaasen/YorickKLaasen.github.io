@@ -5,6 +5,7 @@
     <link rel="stylesheet" 
         type="text/css" 
         href="Css/PFMicro.css">
+        <script src="JavaScript/contact.js" defer></script>
 </head>
 
 <body>
@@ -12,7 +13,6 @@
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="index.html">Home Page</a>
             <a class="navbar-brand" href="Aboutme.html">About Me</a>
-            <a class="navbar-brand" href="Portfolio.html">Portfolio</a>
             <a class="navbar-brand" href="MyProjects.html">My Projects</a>
         </div>
         </nav>
@@ -26,11 +26,9 @@
                             <a class="nav-link active" id="information-tab" data-bs-toggle="tab" href="#Information" role="tab" aria-controls="Information" aria-selected="true">Information</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="gameConcept-tab" data-bs-toggle="tab" href="#GameConcept" role="tab" aria-controls="GameConcept" aria-selected="false">Game Concept</a>
+                            <a class="nav-link" id="gameConcept-tab" data-bs-toggle="tab" href="#GameConcept" role="tab" aria-controls="GameConcept" aria-selected="false">GameConcept/Trailer</a>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="gameTrailer-tab" data-bs-toggle="tab" href="#GameTrailer" role="tab" aria-controls="GameTrailer" aria-selected="false">GameTrailer</a>
-                        </li>
+                        
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="mainMenu-tab" data-bs-toggle="tab" href="#MainMenu" role="tab" aria-controls="MainMenu" aria-selected="false"> My Main Menu Design</a>
                         </li>
@@ -67,20 +65,21 @@
     
                         <!-- Game Concept Tab -->
                         <div class="tab-pane fade" id="GameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
-                            <h2>GameConcept</h2>
-                            <p style="max-width: 800px;">The concept of the game is a Infinite Runner type of game.
-                            where you have to try and survive for as long as possible to get a higher score.
-                            you have to avoid Obstacles along the way and you have a certain amount of lives that go down when you hit an obstacle.
-                            you can collect Crystals along the way which you can use in the shop for Abilities,Cosmetics and Themes.
-                            you also have Achievements/Challenges which you can go for to get rewards.</p>
-                        </div>
-
-                        <div class="tab-pane fade" id="GameTrailer" role="tabpanel" aria-labelledby="gameTrailer-tab">
-                            <h1 id="GameTrailer">Game Trailer</h1>
-                            <video width="600" height="500" controls>
-                                <source src="images/GameTrailer.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                            <h1>Trailer/GameConcept</h1>
+                            <div class="gameContent">
+                                <video width="600" height="500" controls>
+                                    <source src="images/GameTrailer.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="gameConcept">
+                                    <h2 id="Information">Game Concept</h2>
+                                    <p>The concept of the game is an Infinite Runner type of game, <br>
+                                    where you have to try and survive for as long as possible to get a higher score.<br>
+                                    You have to avoid obstacles along the way and you have a certain amount of lives that go down when you hit an obstacle. 
+                                    <br>You can collect Crystals along the way which you can use in the shop for abilities, cosmetics, and themes. 
+                                    <br>You also have achievements/challenges which you can go for to get rewards.</p>
+                                </div>
+                            </div>
                         </div>
     
                         <!-- Main Menu Tab -->
@@ -88,7 +87,7 @@
                             <div class="menuContent">
                                 <img src="images/MainMenu.jpg" alt="MainMenu" style="width: 400px; height:650px;">
                                 <div class="textContent">
-                                  <h4>Main Menu Info</h4>
+                                  <h2 id="Information">Main Menu Info</h2>
                                   <h6>This is the Homescreen/MainMenu design i made.</h6>
                                   <p>it has 4 buttons the Start/Continue Game, Shop, Statistics and Quit</p>
                                   <p>the Start/Continue Game button lets you play the game or continue the game if you had already played it before</p>
@@ -610,4 +609,11 @@ public class ProjectileCollision : MonoBehaviour
                 </div>
             </div>
         </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue; margin-top:10px;">
+            <div class="container d-flex justify-content-between">
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="0354855@student.rocvantwente.nl" class="navbar-brand"style="padding: 3px;">School E-mail</a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="06-18883716"class="navbar-brand" style="padding:3px;">Phonenumber</a>
+                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="yorick.klaasen@gmail.com" class="navbar-brand"style="padding: 3px;">E-mail</a>
+            </div>
+        </nav>
 </body>
