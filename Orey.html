@@ -32,6 +32,18 @@
             <a class="nav-link" id="game-tab" data-bs-toggle="tab" href="#game" role="tab" aria-controls="game" aria-selected="false">Play</a>
         </li>
         <li class="nav-item" role="presentation">
+            <a class="nav-link" id="mainMenu-tab" data-bs-toggle="tab" href="#mainMenu" role="tab" aria-controls="mainMenu" aria-selected="false">My Main Menu</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="achievement-tab" data-bs-toggle="tab" href="#achievement" role="tab" aria-controls="achievement" aria-selected="false">My Achievement Menu</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="gameOver-tab" data-bs-toggle="tab" href="#gameOver" role="tab" aria-controls="gameOver" aria-selected="false">My Game Over Menu</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="coinMachine-tab" data-bs-toggle="tab" href="#coinMachine" role="tab" aria-controls="coinMachine" aria-selected="false">My Coin Machine Menu</a>
+        </li>
+        <li class="nav-item" role="presentation">
             <a class="nav-link" id="code-tab" data-bs-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="false">Code</a>
         </li>
     </ul>
@@ -43,7 +55,7 @@
         <div class="tab-pane fade show active" id="gameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
             <h3>GameConcept</h3>
             <div class="Conceptcontent">
-                <p style="max-width: 800px; margin-bottom: 346px;">The concept of the game is to get the highest score possible just like in arcade games. <br>
+                <p style="max-width: 800px; margin-bottom: 296px;">The concept of the game is to get the highest score possible just like in arcade games. <br>
                     You get a higher score the longer you survive. there is obstacles that you have to avoid since they slow you down.
                     <br>If you slow down to much a miner will catch you and you will lose. <br>
                     There is also a Boss that appears at a score of 1000. <br>
@@ -62,12 +74,23 @@
                 <div class="text-container">
                     <h4>Game Sprites:</h4>
                     <p>These are the sprites used in the Game.</p>
+                    <p>Made By: Rinze Kuizenga and Ruben Stender</p>
                     <h6>The Sprites Contain:</h6>
                     <ul>
                         <li>Player Walk Animation</li>
                         <li>Player Slide Animation</li>
                         <li>Player Death Animation</li>
                         <li>Player Jump Animation</li>
+                        <li>Map/Terrain Sprites</li>
+                        <li>Obstacle Sprites</li>
+                        <li>Pickup Animations</li>
+                        <li>The Miner Animation</li>
+                        <li>Viscacha Animation</li>
+                        <li>Coin Animation</li>
+                        <li>Boss Sprites</li>
+                        <li>Warning Animation</li>
+                        <li>Background Sprites</li>
+                        <li>Rain Sprites</li>
                     </ul>
                 </div>
             </div>
@@ -77,15 +100,452 @@
         <div class="tab-pane fade" id="game" role="tabpanel" aria-labelledby="game-tab">
             <h3>Play</h3>
             <div class="Playcontent">
-                <p></p>
-                <h4><a href="https://play.unity.com/en/games/62b825f9-e216-4f3a-a8ed-8295a2e10445/orey">Orey</a></h4>
+                <p>Click on the Image to Play.</p>
+                <h4>
+                    <a href="https://play.unity.com/en/games/62b825f9-e216-4f3a-a8ed-8295a2e10445/orey">
+                      <img src="images/OreyLogo.png" alt="Orey Game" style="width:400px; margin-bottom:93px;">
+                    </a>
+                  </h4>
             </div>
         </div>
+
+        <!--Main Menu Tab-->
+        <div class="tab-pane fade" id="mainMenu" role="tabpanel" aria-labelledby="mainMenu-tab">
+            <h3>My Main Menu</h3>
+            <h5>With: Rinze Kuizenga</h5>
+            <div class="Menucontent">
+                <div class="images-container">
+                    <img src="images/OreyMain.png" style="width:500px; height:400px; margin-bottom: 8px;">
+                </div>
+                <div class="text-container">
+                    <h4>Main Menu Design</h4>
+                    <p>This is the Main Menu Design i made with Rinze. <br>
+                    You have the basic buttons like Start and Quit. <br>
+                    It also has Achievements,Information And Insert Coins. <br>
+                    They all send you to the Menu of the buttons name. <br>
+                    Insert Coins sends you to the Coin game where you can get coins so that you can play <br>
+                    Achievements sends you to the Achievement menu where you can see  your completed and uncompleted achievements <br>
+                    And Information sends you to the Information menu which shows what the controls are and basic game information</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Achievement Tab-->
+        <div class="tab-pane fade" id="achievement" role="tabpanel" aria-labelledby="achievement-tab">
+            <h3>My Achievement Menu</h3>
+            <div class="Achievementcontent">
+                <div class="images-container">
+                    <img src="images/OreyAchievement.png" style="width:500px; height:400px; margin-bottom: 40px;">
+                </div>
+                <div class="text-container">
+                    <h4>Achievement Menu</h4>
+                    <p>This is the Achievement menu design i made. <br>
+                    It uses a simple ScrollView (Unity) where i put all the achievements in. <br>
+                    When you have unlocked an Achievement it Becomes green and if not its Red. <br>
+                    There is a total of 26 Achievements you can complete. <br>
+                    it was Added so that people have a seperate goal then to just get a high score.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Game Over Tab-->
+        <div class="tab-pane fade" id="gameOver" role="tabpanel" aria-labelledby="gameOver-tab">
+            <h3>My Game Over Menu</h3>
+            <div class="GameOvercontent">
+                <div class="images-container">
+                    <img src="images/OreyGameOver.png" style="width:500px; height:400px; margin-bottom: 40px;">
+                </div>
+                <div class="text-container">
+                    <h4>Game Over Menu</h4>
+                    <p>This is the Game Over menu i made for our game <br>
+                    It shows your statistics like High Score and Score <br>
+                    It also shows your Coins so that you can see if you have enough to play again. <br>
+                    It also has a Restart and Quit button which either lets you play again or sends you back to the Main Menu.</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Coin Machine Tab-->
+        <div class="tab-pane fade" id="coinMachine" role="tabpanel" aria-labelledby="coinMachine-tab">
+            <h3>My Coin Machine Menu</h3>
+            <h5>With: Rinze Kuizenga</h5>
+            <div class="CoinMachinecontent">
+                <div class="images-container">
+                    <img src="images/OreyCoinMachine.png" style="width:500px; height:400px; margin-bottom: 8px;">
+                </div>
+                <div class="text-container">
+                    <h4>Coin Machine Menu</h4>
+                    <p>This is the Coin Machine Menu i made. <br>
+                    To Gain Coins you have to answer 3 of the Math questions correctly within the time given. <br>
+                    as you can see if you type 229191381 it Shows an Viscacha Easter Egg. <br>
+                    You can play it as many times as you want or need. <br></p>
+                </div>
+            </div>
+        </div>
+
          <!--Code Tab-->
         <div class="tab-pane fade" id="code" role="tabpanel" aria-labelledby="code-tab">
-            <h3>My Code</h3>
-            <div class="Codecontent">
-                <p>Placeholder</p>
+            <div class="codeBox" id="MyCode">
+                <h3>My Code</h3>
+                <div class="Codecontent">
+                    <h4>MainMenu.cs</h4>
+                      <div class="codeContainer">
+                      <pre><code class="language-csharp">
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
+
+public class MainMenu : MonoBehaviour
+{
+    // Titlescreen music made by Eiten Epstein: https://www.youtube.com/watch?v=MjyzJ_MaIH0&t=37s
+    // Math music https://www.youtube.com/watch?v=ubNfkpbxXUs&t=8s / https://www.youtube.com/watch?v=FtJ03-g83Yg
+    // Main music and boss by HeatleyBros https://www.youtube.com/watch?v=meLQ3Nn5VPM
+
+    public Animator transition;
+    public AudioClip startSound;
+    public AudioClip insertCoin;
+    public AudioClip denied;
+    public AudioClip achievementsSound;
+    public AudioSource audioSource;
+
+    public bool buttonPressed = true;
+    int playerCoins = 3;
+    int score = 0;
+    int timesPlayed = 0;
+    const string playerCoinsKey = "playerCoins";
+
+    [SerializeField] TextMeshProUGUI coinText;
+    [SerializeField] TextMeshProUGUI warningText;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey(playerCoinsKey))
+        {
+            playerCoins = PlayerPrefs.GetInt(playerCoinsKey, 0);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(playerCoinsKey, playerCoins);
+        }
+        timesPlayed = PlayerPrefs.GetInt("timesPlayed", timesPlayed);
+        coinText.text = "" + playerCoins.ToString();
+        PlayerPrefs.Save();
+    }
+    public void OnQuitClick()
+    {
+        Application.Quit();
+    }
+    public void OnStartClick()
+    {
+        if (playerCoins >= 1)
+        {
+            if (buttonPressed == true)
+            {
+                timesPlayed++;
+                score = 0;
+                PlayerPrefs.SetInt("Score", score);
+                PlayerPrefs.SetInt("timesPlayed", timesPlayed);
+                PlayerPrefs.Save();
+                buttonPressed = false;
+                CoinRemove();
+                StartCoroutine(PlaySoundAndLoadGame());
+            }
+        }
+        else
+        {
+            audioSource.PlayOneShot(denied);
+            warningText.text = "You dont have enough coins to play. Go challenge yourself at the Coin Machine to earn some coins!";
+        }
+    }
+    public void OnAchievementClick()
+    {
+        StartCoroutine(AchievementLoad());
+    }
+    IEnumerator AchievementLoad()
+    {
+        audioSource.PlayOneShot(achievementsSound);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("AchievementsMenu");
+    }
+    public void OnInfoClick()
+    {
+        StartCoroutine(InfoLoad());
+    }
+    IEnumerator InfoLoad()
+    {
+        audioSource.PlayOneShot(achievementsSound);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("InformationMenu");
+    }
+    IEnumerator PlaySoundAndLoadGame()
+    {
+        audioSource.PlayOneShot(startSound);
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Game");
+    }
+    public void CoinRemove()
+    {
+        playerCoins--;
+        PlayerPrefs.SetInt("playerCoins", playerCoins);
+        PlayerPrefs.Save();
+        coinText.text = playerCoins.ToString();
+    }
+    public void OnInsertCoinClick()
+    {
+        StartCoroutine(LoadInsertCoin());
+    }
+    IEnumerator LoadInsertCoin()
+    {
+        audioSource.PlayOneShot(insertCoin);
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("CoinMachine");
+    }
+    private void OnApplicationQuit()
+    {
+        playerCoins = 3;
+        PlayerPrefs.SetInt(playerCoinsKey, playerCoins);
+        PlayerPrefs.Save();
+    }
+}
+
+                      </code></pre>
+                      </div>
+                </div>
+                <div class="Codecontent">
+                    <h4>AchievementGaining.cs</h4>
+                      <div class="codeContainer">
+                      <pre><code class="language-csharp">
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class AchievementGaining : MonoBehaviour
+{
+    [SerializeField] TMP_Text highScore1Text, highScore2Text, highScore3Text, highScore4Text, highScore5Text, highScore6Text, highScore7Text;
+    [SerializeField] TMP_Text CoinGain1Text, CoinGain2Text, CoinGain3Text, CoinGain4Text;
+    [SerializeField] TMP_Text Answers1Text, Answers2Text, Answers3Text, Answers4Text;
+    [SerializeField] TMP_Text Game1Text, Game2Text, Game3Text, Game4Text, Game5Text;
+    [SerializeField] TMP_Text Obstacle1Text, Obstacle2Text, Obstacle3Text, Obstacle4Text, Obstacle5Text;
+    [SerializeField] TMP_Text secretAchievementText, secretAchievementTitle;
+
+    int highScore, coinsGained, answerAchievement, timesPlayed, timesCollided, viscachaSecret;
+
+    const string highScoreKey = "highscore", coinsGainedKey = "coinsGained",
+                 correctAnswersKey = "correctAnswers", timesPlayedKey = "timesPlayed",
+                 timesCollidedKey = "timesCollided", viscachaSecretKey = "viscachaSecret";
+
+    private void Start()
+    {
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        coinsGained = PlayerPrefs.GetInt(coinsGainedKey, 0);
+        answerAchievement = PlayerPrefs.GetInt(correctAnswersKey, 0);
+        timesPlayed = PlayerPrefs.GetInt(timesPlayedKey, 0);
+        timesCollided = PlayerPrefs.GetInt(timesCollidedKey, 0);
+        viscachaSecret = PlayerPrefs.GetInt(viscachaSecretKey, 0);
+
+        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.SetInt(coinsGainedKey, coinsGained);
+        PlayerPrefs.SetInt(correctAnswersKey, answerAchievement);
+        PlayerPrefs.SetInt(timesPlayedKey, timesPlayed);
+        PlayerPrefs.SetInt(timesCollidedKey, timesCollided);
+        PlayerPrefs.SetInt(viscachaSecretKey, viscachaSecret);
+        PlayerPrefs.Save();
+
+        AchievementCheck();
+    }
+
+    private void AchievementCheck()
+    {
+        highScore1Text.color = highScore >= 5000 ? Color.green : Color.red;
+    }
+
+    public void OnBackClick() => SceneManager.LoadScene("MainMenu");
+}
+
+                      </code></pre>
+                      </div>
+                </div>
+                <div class="Codecontent">
+                    <h4>CoinGainMachine.cs</h4>
+                      <div class="codeContainer">
+                      <pre><code class="language-csharp">
+                        public class CoinGainMachine : MonoBehaviour
+{
+    public Animator transition, easterEgg;
+    [SerializeField] TMP_InputField playerInput;
+    [SerializeField] TextMeshProUGUI question, answerStatus, correctAnswersText, timerText, coinObtainedText;
+    [SerializeField] Button confirmAnswerButton, restartButton;
+    int number1, number2, randomNum, questionAnswer, playerAnswer, correctAnswers, answerAchievement, coinsGained, viscachaSecret;
+    const string playerCoinsKey = "playerCoins";
+    float quizTimer;
+    string numberOperator;
+
+    public void OnBackClick() => StartCoroutine(LoadBack());
+    IEnumerator LoadBack()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    private void Start()
+    {
+        QuestionShow();
+        CalculateQuestion();
+        StartCoroutine(Timer());
+        coinsGained = PlayerPrefs.GetInt("coinsGained", coinsGained);
+        answerAchievement = PlayerPrefs.GetInt("correctAnswers", answerAchievement);
+        viscachaSecret = PlayerPrefs.GetInt("viscachaSecret", viscachaSecret);
+    }
+
+    void Update()
+    {
+        if (quizTimer > 0) quizTimer -= Time.deltaTime;
+        timerText.text = quizTimer > 0 ? "Time Left: " + (int)quizTimer : "";
+    }
+
+    public void onRestartClick()
+    {
+        confirmAnswerButton.interactable = true;
+        answerStatus.text = "";
+        correctAnswers = 0;
+        correctAnswersText.text = "Correct Answers: " + correctAnswers;
+        StartCoroutine(Timer());
+        QuestionShow();
+    }
+
+    public void OnConfirmAnswer()
+    {
+        if (int.TryParse(playerInput.text, out playerAnswer))
+        {
+            if (playerAnswer == questionAnswer)
+            {
+                answerStatus.text = "Correct!";
+                QuestionShow();
+                CalculateQuestion();
+                playerInput.text = "";
+                correctAnswers++;
+                answerAchievement++;
+                PlayerPrefs.SetInt("correctAnswers", answerAchievement);
+                PlayerPrefs.Save();
+                correctAnswersText.text = "Correct Answers: " + correctAnswers;
+                if (correctAnswers % 3 == 0)
+                {
+                    coinObtainedText.text = "You Gained a Coin Yippie!";
+                    CoinGaining();
+                }
+            }
+            else if (playerAnswer == 229191381)
+            {
+                viscachaSecret++;
+                PlayerPrefs.SetInt("viscachaSecret", viscachaSecret);
+                PlayerPrefs.Save();
+                answerStatus.text = "oh?";
+                easterEgg.SetTrigger("Start");
+            }
+            else
+            {
+                answerStatus.text = "Incorrect! Try Again";
+                playerInput.text = "";
+            }
+        }
+        else answerStatus.text = "Only Enter Numbers Please";
+    }
+
+    public void CoinGaining()
+    {
+        int playerCoins = PlayerPrefs.GetInt(playerCoinsKey, 0);
+        PlayerPrefs.SetInt(playerCoinsKey, ++playerCoins);
+        PlayerPrefs.SetInt("coinsGained", ++coinsGained);
+        PlayerPrefs.Save();
+    }
+
+    public void QuestionShow()
+    {
+        number1 = Random.Range(100, 1000);
+        number2 = Random.Range(0, 1000);
+        numberOperator = Random.Range(0, 2) == 0 ? "+" : "-";
+        CalculateQuestion();
+        question.text = $"{number1}{numberOperator}{number2}";
+    }
+
+    public int CalculateQuestion()
+    {
+        questionAnswer = numberOperator == "+" ? number1 + number2 : number1 - number2;
+        return questionAnswer;
+    }
+
+    IEnumerator Timer()
+    {
+        quizTimer = 50;
+        while (quizTimer > 0)
+        {
+            timerText.text = "Time Left: " + quizTimer.ToString();
+            yield return new WaitForSeconds(1);
+            quizTimer--;
+        }
+        answerStatus.text = "Time is UP!";
+        confirmAnswerButton.interactable = false;
+    }
+}
+
+                      </code></pre>
+                      </div>
+                </div>
+                <div class="Codecontent">
+                    <h4>GameOverUI.cs</h4>
+                      <div class="codeContainer">
+                      <pre><code class="language-csharp">
+                        public class GameOverUI : MonoBehaviour
+{
+    [SerializeField] TMP_Text highScoreText, scoreText, coinText, warningText;
+    const string playerCoinsKey = "playerCoins", highScoreKey = "highscore", scoreKey = "Score";
+    int highScore, playerCoins, score;
+
+    private void Start()
+    {
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        playerCoins = PlayerPrefs.GetInt(playerCoinsKey, 0);
+        score = PlayerPrefs.GetInt(scoreKey, 0);
+        PlayerPrefs.SetInt(playerCoinsKey, playerCoins);
+        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.SetInt(scoreKey, score);
+        PlayerPrefs.Save();
+        scoreText.text = $"Score: {score}";
+        highScoreText.text = $"HighScore: {highScore}";
+        coinText.text = playerCoins.ToString();
+    }
+
+    public void OnRetryClick()
+    {
+        if (playerCoins >= 1)
+        {
+            playerCoins--;
+            PlayerPrefs.SetInt(playerCoinsKey, playerCoins);
+            PlayerPrefs.SetInt(scoreKey, 0);
+            PlayerPrefs.Save();
+            coinText.text = $"Coins: {playerCoins}";
+            SceneManager.LoadScene("Game");
+        }
+        else warningText.text = "You don't have enough coins. Go to the Coin Machine for more.";
+    }
+
+    public void OnQuitClick() => SceneManager.LoadScene("MainMenu");
+}
+
+                      </code></pre>
+                      </div>
+                </div>
             </div>
         </div>
     </div>

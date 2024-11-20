@@ -32,6 +32,9 @@ body {
     overflow: hidden;
     flex: 1 1 calc(33.333% - 20px);
 }
+.card-text {
+    color: rgb(249, 239, 102);
+}
 
 .container .row .card img {
     width: 100%;

@@ -1,22 +1,24 @@
-.Artcontent, .Conceptcontent, .Playcontent, .Codecontent {
-    background-color: rgba(106, 106, 106, 0.5);
+.Artcontent, .Conceptcontent, .Playcontent, .Codecontent, .Menucontent, .Achievementcontent, .GameOvercontent, .CoinMachinecontent {
+    background-color: rgba(78, 78, 78, 0.641);
     padding: 20px;
     border-radius: 10px;
 }
-
-.Artcontent {
+.nav-link {
+    color: white;
+}
+.Artcontent, .Menucontent, .Achievementcontent, .GameOvercontent, .CoinMachinecontent{
     display: flex;
     align-items: flex-start;
     gap: 20px;
 }
 
-.Artcontent .images-container {
+.images-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.Artcontent .text-container {
+.text-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -26,3 +28,50 @@
     margin: 0;
     padding: 0;
 }
+
+.codeBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .Codecontent {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    margin: 10px;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .codeBox h3, h4 {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .codeContainer {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    color: #0000ff;
+    white-space: pre;
+    margin: 10px 0;
+  }
+  
+  pre {
+    margin: 0;
+  }
+  
+  .codeContainer code {
+    color: #0000ff;
+  }
+@media (max-width: 768px) {
+    .Codecontent {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }

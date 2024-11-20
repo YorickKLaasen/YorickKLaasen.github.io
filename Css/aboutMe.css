@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #626262, #5a5a5a);
+    color: #ffffff;
+}
+.progress {
+    margin-bottom: 20px;
+    height: 30px;
+}
+.progress-bar {
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
