@@ -84,7 +84,7 @@ html {
   padding: 10px;
   border-radius: 5px;
   font-family: "Courier New", Courier, monospace;
-  color: #0000ff;
+  color: #d5d5ff;
   white-space: pre;
   margin: 10px 0;
 }
@@ -94,7 +94,7 @@ pre {
 }
 
 .codeContainer code {
-  color: #0000ff;
+  color: #cfcfff;
 }
 
 @media (max-width: 768px) {

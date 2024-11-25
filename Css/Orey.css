@@ -57,7 +57,7 @@
     padding: 10px;
     border-radius: 5px;
     font-family: "Courier New", Courier, monospace;
-    color: #0000ff;
+    color: #f9f9ff;
     white-space: pre;
     margin: 10px 0;
   }
@@ -67,7 +67,7 @@
   }
   
   .codeContainer code {
-    color: #0000ff;
+    color: #d8d8ff;
   }
 @media (max-width: 768px) {
     .Codecontent {
