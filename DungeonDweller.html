@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>DungeonDweller</title>
         <link rel="shortcut icon" href="images/NoImage.jpg" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -9,9 +9,16 @@
         <link rel="stylesheet" 
         type="text/css" 
         href="Css/DungeonDweller.css">
+        <link rel="stylesheet"
+        type="text/css"
+        href="Css/DDItemHover.css">
+        <link rel="stylesheet"
+        type="text/css"
+        href="Css/CardDesigns.css">
+        <script src="JavaScript/tabOrder.js" defer></script>
         <script src="JavaScript/contact.js" defer></script>
     </head>
-    <body>
+    <body style="background-color:black">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue;">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="index.html">Home Page</a>
@@ -19,54 +26,282 @@
             <a class="navbar-brand" href="MyProjects.html">My Projects</a>
         </div>
         </nav>
-        <div class="container mt-5">
-            
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="gameConcept-tab" data-bs-toggle="tab" href="#gameConcept" role="tab" aria-controls="gameConcept" aria-selected="true">Game Concept</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="sprites-tab" data-bs-toggle="tab" href="#sprites" role="tab" aria-controls="sprites" aria-selected="false">Art</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="balancing-tab" data-bs-toggle="tab" href="#balancing" role="tab" aria-controls="balancing" aria-selected="false">Item Balancing</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="code-tab" data-bs-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="false">Code</a>
-                </li>
+        <div class="tabs-container">
+            <ul class="main-tabs">
+              <li class="tab-link active" data-tab="information">Information</li>
+              <li class="tab-link" data-tab="gameconcept">GameConcept</li>
+              <li class="tab-link" data-tab="uidesigns">UI Designs</li>
+              <li class="tab-link" data-tab="art">Art</li>
+              <li class="tab-link" data-tab="database">Database</li>
+              <li class="tab-link" data-tab="mapgeneration">Map Generation</li>
+              <li class="tab-link" data-tab="code">My Code</li>
             </ul>
-    
-            
-            <div class="tab-content" id="myTabContent">
-                
-                <!-- GameConcept Tab -->
-                <div class="tab-pane fade show active" id="gameConcept" role="tabpanel" aria-labelledby="gameConcept-tab">
-                    <h3>GameConcept</h3>
-                    <p></p>
-                </div>
-
-                <!--Art Tab-->
-                <div class="tab-pane fade" id="sprites" role="tabpanel" aria-labelledby="sprites-tab">
-                    <h3>Art</h3>
-                    <p></p>
-                </div>
-                <!--Item Balancing Tab-->
-                <div class="tab-pane fade" id="balancing" role="tabpanel" aria-labelledby="balancing-tab">
-                    <h3>Item Balancing</h3>
-                    <p></p>
-                </div>
-                <!--Code Tab-->
-                <div class="tab-pane fade" id="code" role="tabpanel" aria-labelledby="code-tab">
-                    <h3>Code</h3>
-                    <p></p>
-                </div>
+            <div id="information" class="tab-content active">
+              <div id="information" class="information-content">
+                <p>Information Content</p>
+              </div>
             </div>
-        </div>
+
+            <div id="gameconcept" class="tab-content">
+              <div id="gameconcept" class="gameconcept-content">
+                <p>GameConcept Content</p>
+              </div>
+            </div>
+
+            <div id="uidesigns" class="tab-content">
+              <div id="uidesigns" class="sub-tabs-container-content">
+                <ul class="sub-tabs">
+                  <li class="sub-tab-link active" data-subtab="mainmenu">Main Menu</li>
+                  <li class="sub-tab-link" data-subtab="shopmenu">Shop Menu</li>
+                  <li class="sub-tab-link" data-subtab="inventorymenu">Inventory Menu</li>
+                  <li class="sub-tab-link" data-subtab="craftingmenu">Crafting Menu</li>
+                  <li class="sub-tab-link" data-subtab="gameovermenu">GameOver Menu</li>
+                  <li class="sub-tab-link" data-subtab="collectionmenu">Collection Menu</li>
+                </ul>
+              </div>
+              <div id="mainmenu" class="subtab-content active">
+                <p>Main Menu</p>
+              </div>
+              <div id="shopmenu" class="subtab-content">
+                <p>Shop Menu</p>
+              </div>
+              <div id="inventorymenu" class="subtab-content">
+                <p>Inventory Menu</p>
+              </div>
+              <div id="craftingmenu" class="subtab-content">
+                <p>Crafting Menu</p>
+              </div>
+              <div id="gameovermenu" class="subtab-content">
+                <p>GameOver Menu</p>
+              </div>
+              <div id="collectionmenu" class="subtab-content">
+                <p>Collection Menu</p>
+              </div>
+            </div>
+            <div id="art" class="tab-content">
+              <div id="art" class="art-content">
+                <p>Art Content</p>
+              </div>
+            </div>
+
+            <div id="database" class="tab-content">
+              <!-- Subtabs Database tab -->
+              <div class="sub-tabs-container">
+                <ul class="sub-tabs">
+                  <li class="sub-tab-link active" data-subtab="weapons">Wapens</li>
+                  <li class="sub-tab-link" data-subtab="armor">Armor</li>
+                  <li class="sub-tab-link" data-subtab="accessories">Accessories</li>
+                  <li class="sub-tab-link" data-subtab="blessings">Blessings</li>
+                  <li class="sub-tab-link" data-subtab="cards">Cards</li>
+                  <li class="sub-tab-link" data-subtab="enemies">Enemies</li>
+                </ul>
+          
+                <!-- Weapons Subtab Content -->
+                <div id="weapons" class="subtab-content active">
+                  <div class="item-grid">
+                    <!-- Weapon Cards-->
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                    <p class="wpnName"><strong>Name: Iron Sword</strong></p>
+                    <p class="dmg"><strong>Damage: 10</strong></p>
+                    <p class="strength"><strong>Strength: 10</strong></p>
+                    <p class="critdmg"><strong>Crit DMG: 0%</strong></p>
+                    <p class="critch"><strong>Crit Chance: 0%</strong></p>
+                    <p class="atkspd"><strong>ATK Speed: 0%</strong></p>
+                    <p><strong>Elements:</strong></p>
+                    <div class="tags">
+                      <span class="tag fire">Fire</span>
+                      <span class="tag water">Water</span>
+                      <span class="tag darkness">Darkness</span>
+                      <span class="tag light">Light</span>
+                      <span class="tag poison">Poison</span>
+                      <span class="tag ice">Ice</span>
+                      <span class="tag lightning">Lightning</span>
+                    </div>
+                    <p><strong>Enemy DMG Buffs:</strong></p>
+                    <div class="tags">
+                      <span class="tag undead">Undead</span>
+                      <span class="tag golem">Golem</span>
+                      <span class="tag draconic">Draconic</span>
+                      <span class="tag demonic">Demonic</span>
+                      <span class="tag angelic">Angelic</span>
+                    </div>
+                    </div><p class="name">Iron Sword</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Katana</strong></p>
+                      <p class="dmg"><strong>Damage: 10</strong></p>
+                      <p class="strength"><strong>Strength: 12</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 10%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 20%</strong></p>
+                      </div><p class="name">Katana</p></div>
+                    
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Cleaver</strong></p>
+                      <p class="dmg"><strong>Damage: 10</strong></p>
+                      <p class="strength"><strong>Strength: 15</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 10%</strong></p>
+                      </div><p class="name">Cleaver</p></div>
+                      
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Iron Battle Axe</strong></p>
+                      <p class="dmg"><strong>Damage: 12</strong></p>
+                      <p class="strength"><strong>Strength: 20</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 15%</strong></p>
+                      </div><p class="name">Battle Axe</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Mace</strong></p>
+                      <p class="dmg"><strong>Damage: 15</strong></p>
+                      <p class="strength"><strong>Strength: 10</strong></p>
+                      </div><p class="name">Mace</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Labrys</strong></p>
+                      <p class="dmg"><strong>Damage: 20</strong></p>
+                      <p class="strength"><strong>Strength: 10</strong></p>
+                      </div><p class="name">Labrys</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                    <p class="wpnName"><strong>Name: Halberd</strong></p>
+                    <p class="dmg"><strong>Damage: 15</strong></p>
+                    <p class="strength"><strong>Strength: 15</strong></p>
+                    <p class="critdmg"><strong>Crit DMG: 30%</strong></p>
+                    </div><p class="name">Halberd</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Pointy Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag poison">Poison</span></div>
+                      </div><p class="name">Pointy Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Thunder Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag lightning">Lightning</span></div>
+                      </div><p class="name">Thunder Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Burning Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag fire">Fire</span></div>
+                      </div><p class="name">Burning Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Water Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag water">Water</span></div>
+                      </div><p class="name">Water Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Glow Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag light">Light</span></div>
+                      </div><p class="name">Glow Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Dark Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag darkness">Darkness</span></div>
+                      </div><p class="name">Dark Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Frozen Stick</strong></p>
+                      <p class="dmg"><strong>Damage: 5</strong></p>
+                      <p class="strength"><strong>Strength: 5</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 5%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 5%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 5%</strong></p>
+                      <p><strong>Elements:</strong></p>
+                      <div class="tags">
+                      <span class="tag ice">Ice</span></div>
+                      </div><p class="name">Frozen Stick</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Dagger</strong></p>
+                      <p class="dmg"><strong>Damage: 10</strong></p>
+                      <p class="strength"><strong>Strength: 10</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 15%</strong></p>
+                      <p class="critch"><strong>Crit Chance: 20%</strong></p>
+                      <p class="atkspd"><strong>ATK Speed: 30%</strong></p>
+                      </div><p class="name">Dagger</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><div class="item-description">
+                      <p class="wpnName"><strong>Name: Claymore</strong></p>
+                      <p class="dmg"><strong>Damage: 12</strong></p>
+                      <p class="strength"><strong>Strength: 12</strong></p>
+                      <p class="critdmg"><strong>Crit DMG: 10%</strong></p>
+                      </div><p class="name">Claymore</p></div>
+
+                    <div class="item-card"><img src="images/foto.png"><p class="name"></p></div>
+                  </div>
+                </div>
+                <div id="armor" class="subtab-content">
+                  <p>Armor content...</p>
+                </div>
+                <div id="accessories" class="subtab-content">
+                  <p>Accessories</p>
+                </div>
+                <div id="blessings" class="subtab-content">
+                  <p>Blessings</p>
+                </div>
+                <div id="cards" class="subtab-content">
+                  <p>Cards</p>
+                </div>
+                <div id="enemies" class="subtab-content">
+                  <p>Enemies</p>
+                </div>
+              </div>
+            </div>
+            <div id="mapgeneration" class="tab-content">
+              <div id="mapgeneration" class="art-content">
+                <p>Map Generation</p>
+              </div>
+            </div>
+            <div id="code" class="tab-content">
+              <p>Settings content...</p>
+            </div>
+          </div>
         <script src="/JavaScript/DungeonDweller.js"></script>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: blue; margin-top:100px;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom" style="background-color: blue; margin-top:100px;">
             <div class="container d-flex justify-content-between">
                 <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="0354855@student.rocvantwente.nl" class="navbar-brand"style="padding: 3px;">School E-mail</a>
-                <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="06-18883716"class="navbar-brand" style="padding:3px;">Phonenumber</a>
+                <!--<a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="06-18883716"class="navbar-brand" style="padding:3px;">Phonenumber</a>-->
                 <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="yorick.klaasen@gmail.com" class="navbar-brand"style="padding: 3px;">E-mail</a>
             </div>
         </nav>
