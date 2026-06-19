@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hunted — Game Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="hunted.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ───────────────────────────────────── -->
+<nav class="navbar">
+  <a class="navbar-brand" href="Aboutme.html">About Me</a>
+  <div class="navbar-links">
+    <a class="navbar-brand" href="MyProjects.html">My Projects</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<header class="hero">
+  <p class="hero-eyebrow">Portfolio · Game Project · Unity 6.3</p>
+  <h1 class="hero-title">HUN<span>TED</span></h1>
+  <p class="hero-sub">2D Island Survival · Wave Defense · Unity 6.3</p>
+</header>
+
+<!-- ── TABS NAV ─────────────────────────────────── -->
+<div class="tabs-wrapper">
+  <nav class="tabs-nav" role="tablist">
+    <button class="tab-btn active" role="tab" data-tab="over">Over de Game</button>
+    <button class="tab-btn" role="tab" data-tab="demo">Demo</button>
+    <button class="tab-btn" role="tab" data-tab="code">Code</button>
+    <button class="tab-btn" role="tab" data-tab="media">Screenshots & Video</button>
+    <button class="tab-btn" role="tab" data-tab="patch">Patch Notes</button>
+  </nav>
+</div>
+
+<!-- ── OVER DE GAME ─────────────────────────────── -->
+<div id="tab-over" class="tab-content active">
+  <div class="section">
+    <p class="section-label">About the Project</p>
+    <h2>What is Hunted?</h2>
+    <p>
+      Hunted is a 2D top-down island survival game made in Unity 6.3. 
+      You spawn on an island and need to open chests to get weapons to kill enemies that spawn in waves each wave becoming
+      more difficult.
+    </p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Genre</h3>
+        <p>2D Top-Down · Wave Survival · Island</p>
+      </div>
+      <div class="card">
+        <h3>Engine & Tools</h3>
+        <p>Unity 6.3 · C# · Piskel · Visual Studio 2022</p>
+      </div>
+      <div class="card">
+        <h3>Core Mechanic</h3>
+        <p>Enemy Waves,Guns with Modifiers</p>
+      </div>
+      <div class="card">
+        <h3>Team</h3>
+        <p>Solo Development Project — Deisgn, Code, Art en Audio</p>
+      </div>
+      <div class="card">
+        <h3>Platform</h3>
+        <p>PC (Windows) · WebGL build (itch.io)/(Unity Play)</p>
+      </div>
+      <div class="card">
+        <h3>Tijdsduur</h3>
+        <p>2026 / End Of May · In Development</p>
+      </div>
+    </div>
+
+    <div class="tag-list">
+      <span class="tag">Unity 6.3</span>
+      <span class="tag">C#</span>
+      <span class="tag">Wave Survival</span>
+      <span class="tag">2D Top-Down</span>
+      <span class="tag">Loot System</span>
+      <span class="tag">AI Enemies</span>
+      <span class="tag">Island</span>
+      <span class="tag">Solo Dev</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── DEMO ─────────────────────────────────────── -->
+<div id="tab-demo" class="tab-content">
+  <div class="section">
+    <p class="section-label">Speelbare Demo</p>
+    <h2>Probeer het zelf</h2>
+    <p>Embed hier je WebGL build van itch.io of een andere host. Vervang de placeholder hieronder door een iframe met jouw game-link.</p>
+
+    <div class="demo-embed">
+      <div class="demo-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="demo-bar-title">Hunted — WebGL Build</span>
+      </div>
+      <!-- ✏️ VERVANG DIT DOOR JE EIGEN IFRAME -->
+      <!-- <iframe src="https://itch.io/embed-upload/JOUW_ID?color=0d0d0d" width="100%" height="100%" allowfullscreen></iframe> -->
+      <iframe src="https://play.unity.com/en/games/90a5c5ec-006d-45e5-86ee-f7ef596c0ab9/hunted" 
+        width="100%" 
+        height="600px" 
+        allowfullscreen>
+</iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ── CODE ─────────────────────────────────────── -->
+<div id="tab-code" class="tab-content">
+  <div class="section">
+    <p class="section-label">Single Responsibility / SOLID</p>
+    <h2>My Code</h2>
+    <p></p>
+
+    <!-- Scripts worden dynamisch geladen via hunted.js → scripts[] array -->
+    <div class="code-block">
+      <div class="code-tabs-row" id="code-tabs-row"></div>
+      <div id="code-panels"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MEDIA ─────────────────────────────────────── -->
+<div id="tab-media" class="tab-content">
+  <div class="section">
+    <p class="section-label">Beelden & Video</p>
+    <h2>Screenshots & Trailer</h2>
+    <p>Voeg screenshots toe door de placeholders te vervangen met een &lt;img&gt; tag. Plak je YouTube-link in de video-wrapper.</p>
+
+    <div class="video-wrapper">
+      <!-- ✏️ VERVANG DOOR: <iframe src="https://www.youtube.com/embed/JOUW_VIDEO_ID" allowfullscreen></iframe> -->
+      <div class="play-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.75rem;color:#444">Plak hier een YouTube iframe</span>
+    </div>
+
+    <div class="screenshots-grid">
+      <div class="ss-card">
+        <!-- <img src="screenshot1.png" class="ss-thumb" alt="Gameplay"> -->
+        <div class="ss-empty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="ss-label">Screenshot 1 — Gameplay</div>
+      </div>
+      <div class="ss-card">
+        <div class="ss-empty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="ss-label">Screenshot 2 — Wave aanval</div>
+      </div>
+      <div class="ss-card">
+        <div class="ss-empty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="ss-label">Screenshot 3 — Kist openen</div>
+      </div>
+      <div class="ss-card">
+        <div class="ss-empty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        </div>
+        <div class="ss-label">Screenshot 4 — Unity Editor</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PATCH NOTES ───────────────────────────────── -->
+<div id="tab-patch" class="tab-content">
+  <div class="section">
+    <p class="section-label">Version History</p>
+    <h2>Patch Notes</h2>
+    <p>Where you can see things that have been added or fixed.</p>
+
+    <div class="patch-list">
+
+      <!-- ✏️ NIEUWSTE VERSIE BOVENAAN -->
+
+      <div class="patch-entry">
+        <div class="patch-header">
+          <span class="patch-version">v0.3.0</span>
+          <span class="patch-badge badge-latest">Latest</span>
+          <span class="patch-date">June 18th 2026</span>
+        </div>
+        <div class="patch-body">
+          <div>
+            <p class="patch-group-title added">Added</p>
+            <ul class="patch-items">
+              <li class="added">Weapon Modifiers - There are different modifiers weapon can get that either increase stats or change bullets</li>
+              <li class="added">Enemy AI - Flowfield AI for enemies.</li>
+              <li class="added">Armored Enemy - An Enemy that has a hitshield that needs to be broken before taking damage.</li>
+              <li class="added">Wave System - Waves have a budget to spawn enemies that increases every wave.</li>
+              <li class="added">DamageText - Damage Text that shows how much damage you dealt to an enemy.</li>
+              <li class="added">WeaponChest Dropchance - Items with higher rarity get an increased dropchance from higher graded chests.</li>
+              <li class="added">Player Healthbar - Players can now see how much health they have left.</li>
+              <li class="added">Player XPbar - Players can now get XP from killing enemies that levels them up</li>
+              <li class="added">Main Menu - On starting the game the player sees the Main Menu before the game.</li>
+              <li class="added">Game Over - On player death opens the GameOver panel and shows Player stats</li>
+            </ul>
+          </div>
+          <div>
+            <p class="patch-group-title changed">Changes</p>
+            <ul class="patch-items">
+              <li class="changed">Updating Weapon Stats - now done via a seperate script instead of Prefab</li>
+              <li class="changed">Weapon Inventory UI - added weapon names to inventory UI so players know which modifier and weapon they have.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="patch-group-title fixed">Fixed</p>
+            <ul class="patch-items">
+              <li class="fixed">No Weapon From Chest - players sometimes didnt get weapons from a chest</li>
+              <li class="fixed">Enemy Attack Cooldown - Enemies could'nt attack the player a 2nd time until player left enemy collider.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="patch-entry">
+        <div class="patch-header">
+          <span class="patch-version">v0.2.0</span>
+          <span class="patch-badge badge-stable">Stable</span>
+          <span class="patch-date">May-June 2026</span>
+        </div>
+        <div class="patch-body">
+          <div>
+            <p class="patch-group-title added">Added</p>
+            <ul class="patch-items">
+              <li class="added">Weapon Inventory - Weapon inventory has been added where player can equip their weapons.</li>
+              <li class="added">Weapon Shoot - Weapons can now shoot with some weapons having piercing bullets.</li>
+              <li class="added">Test Enemy - Added test enemy to see if bullets damage enemies.</li>
+              <li class="added">Chest Loot - Chests can now give the player weapons.</li>
+              <li class="added">Ammo UI - Added UI that shows how much ammo the gun currently has.</li>
+              <li class="added">Player Aim/ Gun Rotate - weapons now rotate with player Mouse position.</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="patch-entry">
+        <div class="patch-header">
+          <span class="patch-version">v0.1.0</span>
+          <span class="patch-date">May 2026</span>
+        </div>
+        <div class="patch-body">
+          <div>
+            <p class="patch-group-title added">Added</p>
+            <ul class="patch-items">
+              <li class="added">Player Movement - The player can now move around the Map with the W,A,S,D keys.</li>
+              <li class="added">Island Map - The island for the map has been generated.</li>
+              <li class="added">Chest Opening - chests can be opened but don't do anything yet.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  Hunted &copy; 2026 &nbsp;·&nbsp;
+  <a href="#">GitHub</a> &nbsp;·&nbsp;
+  <a href="#">itch.io</a>
+</footer>
+
+<script src="hunted.js"></script>
+</body>
+</html>
