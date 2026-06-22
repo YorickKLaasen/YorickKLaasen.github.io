@@ -1,5 +1,7 @@
 body {
-    background: linear-gradient(to bottom, #ffffff, #5a5a5a);
+    background-color: darkgrey;
+    min-height: 100vh;
+    margin: 0;
 }
 .carousel-inner {
     overflow: hidden;
