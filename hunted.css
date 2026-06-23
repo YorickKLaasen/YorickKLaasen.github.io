@@ -358,7 +358,14 @@ pre {
   transition: border-color .15s;
 }
 .ss-card:hover { border-color: var(--accent); }
-.ss-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.ss-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background: #111;
+  display: block;
+}
+
 .ss-empty {
   width: 100%; aspect-ratio: 16/9;
   background: #111;
