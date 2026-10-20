@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #14110f;
+            --ink-soft: #1f1a17;
+            --paper: #f1e8d6;
+            --paper-dim: #c9bfa9;
+            --red: #c0392b;
+            --red-dark: #8e2a20;
+            --gold: #c9a24b;
+            --green: #5fa86a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Noto Sans JP", "Segoe UI", sans-serif;
+            background: var(--ink);
+            color: var(--paper);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            position: relative;
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(192,57,43,.25), transparent 60%),
+                var(--ink-soft);
+            border-bottom: 3px solid var(--red);
+            overflow: hidden;
+        }
+
+        /* red sun (hinomaru) */
+        header::before {
+            content: "";
+            position: absolute;
+            top: -90px; right: 8%;
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            background: var(--red);
+            opacity: .18;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 1rem; left: 1.2rem;
+            color: var(--paper-dim);
+            text-decoration: none;
+            font-size: .9rem;
+        }
+        .back-link:hover { color: var(--gold); }
+
+        header .kanji {
+            font-family: "Noto Serif JP", serif;
+            color: var(--red);
+            font-size: 1.1rem;
+            letter-spacing: .6em;
+            margin-bottom: .5rem;
+        }
+
+        header h1 {
+            font-family: "Noto Serif JP", serif;
+            font-size: clamp(3rem, 9vw, 5.5rem);
+            letter-spacing: .15em;
+            line-height: 1.1;
+        }
+
+        header .tagline {
+            color: var(--paper-dim);
+            margin-top: .8rem;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: .2rem 1rem;
+            border: 1px solid var(--green);
+            color: var(--green);
+            font-size: .85rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .tags {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .5rem;
+            margin-top: 1rem;
+        }
+        .tags li {
+            padding: .15rem .8rem;
+            font-size: .8rem;
+            letter-spacing: .06em;
+            color: var(--paper);
+            background: rgba(192,57,43,.2);
+            border: 1px solid var(--red-dark);
+        }
+
+        /* ---------- Tabs ---------- */
+        nav.tabs {
+            display: flex;
+            justify-content: center;
+            gap: .5rem;
+            padding: 1rem;
+            background: var(--ink);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #2c2622;
+        }
+
+        nav.tabs button {
+            font-family: "Noto Serif JP", serif;
+            font-size: 1rem;
+            background: transparent;
+            color: var(--paper-dim);
+            border: 1px solid transparent;
+            border-bottom: 3px solid transparent;
+            padding: .5rem 1.4rem;
+            cursor: pointer;
+            transition: color .2s, border-color .2s;
+        }
+        nav.tabs button:hover { color: var(--paper); }
+        nav.tabs button.active {
+            color: var(--paper);
+            border-bottom-color: var(--red);
+        }
+
+        /* ---------- Layout ---------- */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.2rem 4rem;
+        }
+
+        .panel { display: none; }
+        .panel.active { display: block; animation: fade .35s ease; }
+        @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+        h2 {
+            font-family: "Noto Serif JP", serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding-left: .9rem;
+            border-left: 5px solid var(--red);
+        }
+
+        h3 {
+            font-family: "Noto Serif JP", serif;
+            color: var(--gold);
+            margin-bottom: .4rem;
+        }
+
+        section { margin-bottom: 3rem; }
+
+        p { margin-bottom: .8rem; }
+
+        .info-box {
+            background: var(--ink-soft);
+            border: 1px solid #2c2622;
+            border-left: 4px solid var(--gold);
+            padding: 1.2rem 1.4rem;
+        }
+
+        .team { color: var(--paper-dim); font-size: .95rem; }
+
+        /* ---------- Cards ---------- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .card {
+            background: var(--ink-soft);
+            border: 1px solid #2c2622;
+            border-top: 3px solid var(--red);
+            padding: 1.4rem;
+            transition: transform .2s, border-color .2s;
+        }
+        .card:hover { transform: translateY(-3px); border-top-color: var(--gold); }
+
+        .card ul { margin: .5rem 0 0 1.2rem; color: var(--paper-dim); }
+        .card .tag {
+            display: inline-block;
+            font-size: .72rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: .3rem;
+        }
+
+        /* ---------- Carousel ---------- */
+        .carousel {
+            position: relative;
+            margin: 0 0 1rem;
+            border: 1px solid #2c2622;
+            background: #0c0a09;
+        }
+
+        .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+        .carousel-track::-webkit-scrollbar { display: none; }
+
+        .carousel-track img {
+            flex: 0 0 100%;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            scroll-snap-align: start;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2rem; height: 2rem;
+            background: rgba(20,17,15,.75);
+            color: var(--paper);
+            border: 1px solid var(--red-dark);
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .carousel-btn:hover { background: var(--red-dark); }
+        .carousel-btn.prev { left: .5rem; }
+        .carousel-btn.next { right: .5rem; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: .5rem; left: 0; right: 0;
+            display: flex;
+            justify-content: center;
+            gap: .4rem;
+        }
+        .carousel-dots span {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(241,232,214,.4);
+            cursor: pointer;
+        }
+        .carousel-dots span.active { background: var(--red); }
+
+        /* hidden automatically when there is only 1 image */
+        .carousel.single .carousel-btn,
+        .carousel.single .carousel-dots { display: none; }
+
+        /* ---------- Code ---------- */
+        .code-block { margin-bottom: 2rem; }
+        .code-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0c0a09;
+            border: 1px solid #2c2622;
+            border-bottom: none;
+            padding: .5rem 1rem;
+            font-family: Consolas, monospace;
+            font-size: .9rem;
+            color: var(--gold);
+        }
+        .code-head button {
+            background: transparent;
+            color: var(--paper-dim);
+            border: 1px solid #3a322c;
+            padding: .15rem .7rem;
+            cursor: pointer;
+            font-size: .8rem;
+        }
+        .code-head button:hover { color: var(--paper); border-color: var(--red); }
+
+        pre {
+            background: #0c0a09;
+            border: 1px solid #2c2622;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: .88rem;
+            line-height: 1.5;
+            color: #e6dcc8;
+        }
+
+        /* ---------- Build ---------- */
+        .build-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #0c0a09;
+            border: 2px solid var(--red);
+        }
+        .build-frame iframe {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+        .build-placeholder {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            color: var(--paper-dim);
+        }
+        .build-placeholder .big {
+            font-family: "Noto Serif JP", serif;
+            font-size: 3rem;
+            color: var(--red);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #6e655a;
+            font-size: .85rem;
+            border-top: 1px solid #2c2622;
+        }
+
+        @media (max-width: 600px) {
+            nav.tabs { gap: 0; padding: .5rem; }
+            nav.tabs button { padding: .5rem .8rem; font-size: .9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a class="back-link" href="index.html">&larr; Back</a>
+    <div class="kanji">侍 &nbsp; 鴨</div>
+    <h1>Kamo</h1>
+    <p class="tagline">A roguelike tower climber starring a samurai duck with a huge shotgun</p>
+    <span class="badge">Status: Finished</span>
+    <ul class="tags">
+        <li>Roguelike</li>
+        <li>2D</li>
+        <li>C#</li>
+        <li>Unity</li>
+        <li>Group project</li>
+    </ul>
+</header>
+
+<nav class="tabs" role="tablist">
+    <button class="active" role="tab" data-tab="overview">Overview</button>
+    <button role="tab" data-tab="code">Code</button>
+    <button role="tab" data-tab="build">Build</button>
+</nav>
+
+<main>
+
+    <!-- ================= OVERVIEW ================= -->
+    <div id="overview" class="panel active">
+
+        <section>
+            <h2>Project / assignment</h2>
+            <div class="info-box">
+                <p>
+                    Kamo is a roguelike tower climber where you play as Kamo, a samurai duck with a huge shotgun.
+                    This game was made as a school project.
+                </p>
+                <!-- Replace the text below with the real assignment description -->
+                <p>
+                    <strong>Assignment:</strong> This project was called Freedom and as such we were given almost complete freedom in what to make.
+                    of course there were a few rules we had to follow such as Clean Code, Documents and other things for the rest it was all up to us.
+                </p>
+                <p class="team">
+                    <strong>Team:</strong> Daniël Freriksen, Rinze Kuizenga, Ruben Stender, Simon Boersma, Luuk van Norden and myself.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>What I made</h2>
+
+            <!-- HOW TO ADD IMAGES:
+                 Every card has a <div class="carousel"> with <img> tags inside.
+                 - Add an image: copy an <img src="images/yourfile.png" alt="description"> line into the carousel-track.
+                 - Remove an image: delete its <img> line.
+                 - With only 1 image the arrows and dots hide themselves automatically.
+                 Replace images/NoImage.jpg with your own screenshots or GIFs. -->
+
+            <div class="grid">
+
+                <article class="card">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <img src="images/KamoPowerUp.png" alt="Upgrade system screenshot 1">
+                            <!--<img src="images/NoImage.jpg" alt="Upgrade system screenshot 3">-->
+                        </div>
+                        <button type="button" class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Next image">&#8250;</button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                    <span class="tag">System</span>
+                    <h3>Upgrade system</h3>
+                    <p>after you beat the tower you can choose a upgrade to start with in the next tower to make it easier to progress. each time you get the choice between 3 powerups so its up to luck to get something good.</p>
+                </article>
+
+                <article class="card">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <img src="images/KamoSettings.png" alt="Settings menu">
+                            <img src="images/KamoPause.png" alt="Pause screen">
+                            <img src="images/KamoGameOver.png" alt="Game over screen">
+                        </div>
+                        <button type="button" class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Next image">&#8250;</button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                    <span class="tag">UI</span>
+                    <h3>UI</h3>
+                    <p>The UI are pretty simple and show you what you need to know, Settings simply shows the controls for the game,
+                        Pause screen pauses your game so you can take a break or check the controls,
+                        Game over screen shows that you died how long you survived and a retry or exit button,
+                        And as last Tower progress shows how far you are in the tower until you get the bossfight.</p>
+                    <ul>
+                        <li>Settings menu</li>
+                        <li>Pause screen</li>
+                        <li>Game over screen</li>
+                        <li>Tower progress bar</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <img src="images/TutorialShowcase.gif" alt="Tutorial level screenshot 1">
+                            <!--<img src="images/NoImage.jpg" alt="Tutorial level screenshot 2">-->
+                        </div>
+                        <button type="button" class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+                        <button type="button" class="carousel-btn next" aria-label="Next image">&#8250;</button>
+                        <div class="carousel-dots"></div>
+                    </div>
+                    <span class="tag">Level</span>
+                    <h3>Tutorial level</h3>
+                    <p>The tutorial explains the controls and mechanics to the player that are needed to understand the game to try the tutorial yourself go to build and start the demo</p>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ================= CODE ================= -->
+    <div id="code" class="panel">
+        <h2>Code</h2>
+        <p>A selection of the scripts I wrote for Kamo.</p>
+
+        <!-- Copy this block for every script you want to show.
+             Note: < and > in your C# code must be written as &lt; and &gt; in HTML. -->
+
+        <div class="code-block">
+            <div class="code-head">
+                <span>Upgrades.cs</span>
+                <button type="button" class="copy-btn">Copy</button>
+            </div>
+            <pre><code>using UnityEngine;
+
+public class Upgrades : MonoBehaviour
+{
+    [SerializeField] UpgradeTiers upgradeTiers;
+    [SerializeField] Weaponshot weaponShot;//ammo en reload en shotgunPellets
+    [SerializeField] PlayerData playerData; //Speed
+    [SerializeField] PlayerHp playerHp;
+    
+    float[] reloadTimes = {0.5f,0.4f,0.25f };
+    int[] shotgunPelletAmounts = { 2, 1, 2 };
+    float[] speedBoostAmounts = { 1.3f, 1.05f, 1.1f };
+    int[] moreDamageAmounts = { 1, 1, 1 };
+    int[] ammoAmounts = { 1, 1, 1 };
+    public int damageIncrease;
+
+    public void OnReloadClick()
+    {
+        weaponShot.reloadTime = reloadTimes[upgradeTiers.reloadTier - 1];
+    }
+    public void OnShotgunPelletClick()
+    {
+        weaponShot.pelletIncrease += shotgunPelletAmounts[upgradeTiers.pelletTier - 1];
+    }
+    public void OnSpeedBoostClick()
+    {
+        playerData.runMaxSpeed *= speedBoostAmounts[upgradeTiers.speedBoostTier - 1];
+    }
+    public void OnHeartClick()
+    {
+        if (playerHp.playerHp == 2)
+        {
+            playerHp.heart1.SetActive(true);
+            playerHp.playerHp++;
+        }
+        else if (playerHp.playerHp == 1)
+        {
+            playerHp.heart2.SetActive(true);
+            playerHp.playerHp++;
+        }
+    }
+    public void OnDamageClick()
+    {
+        damageIncrease += moreDamageAmounts[upgradeTiers.moreDamageTier - 1];
+    }
+    public void OnAmmoClick()
+    {
+        weaponShot.maxAmmo += ammoAmounts[upgradeTiers.ammoTier - 1];
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="code-block">
+            <div class="code-head">
+                <span>Progressbar.cs</span>
+                <button type="button" class="copy-btn">Copy</button>
+            </div>
+            <pre><code>using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
+public class CompletionBarFiller : MonoBehaviour
+{
+    [SerializeField] Image completionBar;
+    public float fill = 0f;
+    float fillTime = 3f;
+    [SerializeField] Gradient gradient;
+    [SerializeField] MapGenerator mapGenerator;
+    void Update()
+    {
+        fill = mapGenerator.roomCounter / 5;
+        completionBar.fillAmount = Mathf.MoveTowards(completionBar.fillAmount, fill, Time.deltaTime / fillTime);
+        completionBar.color = gradient.Evaluate(completionBar.fillAmount);
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="code-block">
+            <div class="code-head">
+                <span>Flashlight.cs</span>
+                <button type="button" class="copy-btn">Copy</button>
+            </div>
+            <pre><code>using UnityEngine;
+
+public class Flashlight : MonoBehaviour
+{
+    public Transform flashlight;
+    public float rotationOffset = -90f;
+    void Update()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePos - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        flashlight.rotation = Quaternion.Euler(0f, 0f, angle + rotationOffset);
+    }
+}
+</code></pre>
+        </div>
+
+        <div class="code-block">
+            <div class="code-head">
+                <span>DeathAnimation.cs</span>
+                <button type="button" class="copy-btn">Copy</button>
+            </div>
+            <pre><code>using System.Collections;
+using TMPro;
+using UnityEngine;
+
+public class DeathAnimation : MonoBehaviour
+{
+    [SerializeField] PlayerHp playerHP;
+    [SerializeField] GameObject player;
+    [SerializeField] Vector3 lastPlayerLocation;
+    [SerializeField] Vector3 playerLocation;
+    [SerializeField] GameObject graveStone;
+    int animationPlayedCount;
+    [SerializeField] GameObject gameOver;
+    [SerializeField] TextMeshProUGUI youDiedText;
+
+    private void Update()
+    {
+        playerLocation = player.transform.position;
+        if (playerHP.playerHp == 0 && animationPlayedCount != 1)
+        {
+            CreateGraveStone();
+        }
+    }
+    public void CreateGraveStone()
+    {
+        animationPlayedCount++;
+        lastPlayerLocation = playerLocation;
+        Vector3 newLocation = new Vector3(lastPlayerLocation.x, lastPlayerLocation.y, lastPlayerLocation.z);
+        Instantiate(graveStone, newLocation, Quaternion.Euler(0, 0, -20));
+        player.SetActive(false);
+        youDiedText.text = "You Died!";
+        StartCoroutine(WaitTime());
+    }
+    IEnumerator WaitTime()
+    {
+        yield return new WaitForSeconds(1.5f);
+        youDiedText.gameObject.SetActive(false);
+        gameOver.SetActive(true);
+    }
+}
+
+</code></pre>
+        </div>
+    </div>
+
+    <!-- ================= BUILD ================= -->
+    <div id="build" class="panel">
+        <h2>Build</h2>
+        <p>Play Kamo right in your browser.(can take a few seconds to load.)</p>
+ 
+        <div class="build-frame">
+            <iframe src="https://play.unity.com/api/v1/games/game/26f5a560-8886-4f65-88a8-181877ededde/build/latest/frame"
+                    title="Kamo - Unity Play build"
+                    allowfullscreen></iframe>
+        </div>
+        <p style="margin-top:1rem;">
+            Doesn't load? <a href="https://play.unity.com/en/games/26f5a560-8886-4f65-88a8-181877ededde/kamo" target="_blank" rel="noopener" style="color:var(--gold);">Play it on Unity Play</a>.
+        </p>
+    </div>
+
+</main>
+
+<footer>Kamo &middot; school project</footer>
+
+<script>
+    // Tabs
+    const tabButtons = document.querySelectorAll('nav.tabs button');
+    const panels = document.querySelectorAll('.panel');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+    });
+
+    // Carousels
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = track.querySelectorAll('img');
+        const dotsBox = carousel.querySelector('.carousel-dots');
+        const prev = carousel.querySelector('.prev');
+        const next = carousel.querySelector('.next');
+
+        if (slides.length <= 1) {
+            carousel.classList.add('single');
+            return;
+        }
+
+        // build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.addEventListener('click', () => goTo(i));
+            dotsBox.appendChild(dot);
+        });
+        const dots = dotsBox.querySelectorAll('span');
+
+        function current() {
+            return Math.round(track.scrollLeft / track.clientWidth);
+        }
+        function goTo(i) {
+            const n = (i + slides.length) % slides.length;
+            track.scrollTo({ left: n * track.clientWidth });
+        }
+        function updateDots() {
+            const c = current();
+            dots.forEach((d, i) => d.classList.toggle('active', i === c));
+        }
+
+        prev.addEventListener('click', () => goTo(current() - 1));
+        next.addEventListener('click', () => goTo(current() + 1));
+        track.addEventListener('scroll', updateDots);
+        updateDots();
+    });
+
+    // Copy buttons for code
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const code = btn.closest('.code-block').querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const old = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = old, 1500);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

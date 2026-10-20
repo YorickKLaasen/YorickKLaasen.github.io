@@ -1,24 +1,562 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Drenched</title>
-        <link rel="shortcut icon" href="images/NoImage.jpg" type="image/x-icon">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        <script src="JavaScript/tabOrder.js" defer></script>
-        <script src="JavaScript/Drenched.js" defer></script>
-        <link rel="stylesheet" 
-        type="text/css" 
-        href="Css/Drenched.css">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phoenix Ramp</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a222c;
+    --panel-2: #222d3a;
+    --text: #e8edf2;
+    --muted: #9aa8b6;
+    --accent: #ff7a2f;
+    --accent-2: #ffb347;
+    --border: #2e3b4a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 56px 20px 32px;
+    background: linear-gradient(180deg, #2a1608 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.4rem); color: var(--accent); letter-spacing: 1px; }
+  header p { margin: 8px 0 0; color: var(--muted); }
+  .badge {
+    display: inline-block; margin-top: 14px; padding: 4px 12px;
+    border-radius: 999px; background: rgba(60, 200, 90, .15);
+    color: #4cd16b; font-weight: 600; font-size: .9rem;
+  }
+  .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .tag {
+    padding: 3px 12px; border-radius: 6px; font-size: .85rem; font-weight: 600;
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+  }
+  .tag.story   { border-color: #b57cff; color: #cfa8ff; }
+  .tag.history { border-color: #d9a441; color: #f0c56b; }
+  .tag.group   { border-color: #4cc3ff; color: #8bdcff; }
+  .tag.unity   { border-color: #e0e0e0; color: #ffffff; }
+  .tag.csharp  { border-color: #68d391; color: #9ae6b4; }
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSTL77Q8G3"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
 
-        gtag('config', 'G-JSTL77Q8G3');
-        </script>
-        </head>
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  .tab-btn {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    padding: 12px 20px; font-size: 1rem; font-weight: 600;
+    border-bottom: 3px solid transparent; margin-bottom: -1px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .subtabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .sub-btn {
+    background: var(--panel); border: 1px solid var(--border); color: var(--muted);
+    padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: .95rem;
+  }
+  .sub-btn.active { background: var(--accent); border-color: var(--accent); color: #1a0d03; font-weight: 700; }
+  .sub-panel { display: none; }
+  .sub-panel.active { display: block; }
+
+  h2 { color: var(--accent-2); margin-top: 0; }
+  h3 { color: var(--text); margin-bottom: 6px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid > * { min-width: 0; } /* stops big images from pushing the card wider than the grid */
+  .team { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .team li { background: var(--panel-2); padding: 6px 14px; border-radius: 999px; font-size: .95rem; }
+  .placeholder {
+    background: var(--panel-2); border: 2px dashed var(--border); border-radius: 10px;
+    aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center;
+    color: var(--muted); text-align: center; padding: 12px; font-size: .9rem;
+  }
+
+  /* Map images: always fit inside the card */
+  .map-img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+
+  .build-frame {
+    width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--border);
+    border-radius: 10px; background: #000; overflow: hidden;
+  }
+  .build-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .note { color: var(--muted); font-size: .9rem; }
+  ul.clean { padding-left: 20px; }
+
+  /* Code tab */
+  .code-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .code-head h3 { margin: 0; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--accent-2); }
+  .copy-btn {
+    background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+    padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: .85rem;
+  }
+  .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+  pre {
+    background: #0a0e13; border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; overflow-x: auto; margin: 12px 0 0; max-height: 480px;
+  }
+  pre code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Courier New", monospace;
+    font-size: .88rem; color: #d6e2ee; white-space: pre; tab-size: 4;
+  }
+
+  /* Carousel */
+  .carousel { position: relative; margin-top: 16px; }
+  .carousel-viewport {
+    overflow: hidden; border-radius: 10px; border: 1px solid var(--border);
+    background: #000; aspect-ratio: 16 / 9;
+  }
+  .carousel-track { display: flex; height: 100%; transition: transform .4s ease; }
+  .carousel .slide {
+    flex: 0 0 100%; width: 100%; height: 100%; margin: 0;
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  .carousel .slide img {
+    width: 100%; height: 100%; max-width: 100%; border: 0; border-radius: 0; margin: 0;
+    object-fit: contain; display: block; /* contain = whole image always fits */
+  }
+  .carousel .slide figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 14px;
+    background: rgba(0,0,0,.6); font-size: .85rem; color: var(--text);
+  }
+  .car-btn {
+    position: absolute; top: calc(50% - 10px); transform: translateY(-50%);
+    width: 40px; height: 40px; border-radius: 50%; border: none; cursor: pointer;
+    background: rgba(0,0,0,.55); color: #fff; font-size: 1.3rem; line-height: 1;
+  }
+  .car-btn:hover { background: var(--accent); color: #1a0d03; }
+  .car-btn.prev { left: 10px; }
+  .car-btn.next { right: 10px; }
+  .car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+  .car-dot {
+    width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; cursor: pointer;
+    background: var(--border);
+  }
+  .car-dot.active { background: var(--accent); }
+
+  footer { text-align: center; color: var(--muted); padding: 24px; border-top: 1px solid var(--border); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Phoenix Ramp</h1>
+  <p>An educational game about the Phoenix disaster on Lake Michigan</p>
+  <span class="badge">Status: Finished</span>
+  <div class="tags">
+    <span class="tag story">Story</span>
+    <span class="tag history">History</span>
+    <span class="tag group">Group project</span>
+    <span class="tag unity">Unity</span>
+    <span class="tag csharp">C#</span>
+  </div>
+</header>
+
+<main>
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-tab="info">Info</button>
+    <button class="tab-btn" data-tab="build">Build</button>
+    <button class="tab-btn" data-tab="made">What I made</button>
+    <button class="tab-btn" data-tab="code">Code</button>
+  </nav>
+
+  <!-- INFO -->
+  <section id="info" class="tab-panel active">
+    <div class="card">
+      <h2>About the project</h2>
+      <p>
+        Phoenix Ramp is a game about the Phoenix disaster: the fire on the steamship SS Phoenix on Lake Michigan,
+        close to Sheboygan (Wisconsin, USA). The ship was carrying many Dutch emigrants, including people from the
+        Achterhoek, and an estimated 190 people or more lost their lives.
+      </p>
+      <p>
+        The game was made as part of a school project, to inform students about the incident in a playful way.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Project</h3>
+        <p>Made as an <strong>AGP</strong> project: <em>Agile Game Production</em>. We worked as a team using
+        agile methods (sprints, task division and regular retrospectives).</p>
+      </div>
+      <div class="card">
+        <h3>Goal</h3>
+        <p>Inform students about the Phoenix disaster through a game, instead of just a text or a presentation.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Team</h3>
+      <ul class="team">
+        <li>Alkan Çakir</li>
+        <li>Simon Boermsa</li>
+        <li>Esat Yavuz</li>
+        <li>Zeineb Ibrahim</li>
+        <li>+ me</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BUILD -->
+  <section id="build" class="tab-panel">
+    <div class="card">
+      <h2>Play the game</h2>
+      <p class="note">Play Phoenix Ramp directly in your browser (Unity WebGL).</p>
+      <div class="build-frame">
+        <iframe src="https://play.unity.com/api/v1/games/game/182dad40-c0c5-49dd-b6f4-1dac9cbe1cbf/build/latest/frame"
+                title="Phoenix Ramp - Unity Play build"
+                allowfullscreen></iframe>
+      </div>
+      <p class="note">
+        Game not loading?
+        <a href="https://play.unity.com/en/games/182dad40-c0c5-49dd-b6f4-1dac9cbe1cbf/project-phoenix" target="_blank" rel="noopener" style="color:var(--accent)">Open it on Unity Play</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT I MADE -->
+  <section id="made" class="tab-panel">
+    <div class="subtabs">
+      <button class="sub-btn active" data-sub="maps">Maps</button>
+      <button class="sub-btn" data-sub="post">Post game content</button>
+    </div>
+
+    <div id="maps" class="sub-panel active">
+      <div class="grid">
+        <div class="card">
+          <h2>Map 1: Achterhoek</h2>
+          <img class="map-img" src="images/Chapter1Achterhoek.png" alt="Map 1: Achterhoek">
+          <p>The start of the story: the Achterhoek in the Netherlands, where the emigrants came from
+          before they began their journey to America.</p>
+        </div>
+        <div class="card">
+          <h2>Map 2: America (Sheboygan)</h2>
+          <img class="map-img" src="images/Chapter3Sheboygan.png" alt="Map 2: Sheboygan">
+          <p>The location where the survivors went after the disaster (Sheboygan near Lake Michigan).</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>My contribution</h3>
+        <p class="note">what i worked on for these maps.</p>
+        <ul class="clean">
+          <li>Designed the maps (Ground,Water)</li>
+          <li>Placed/Build the Buildings around the map</li>
+          <li>Made it so the player can't stand on water</li>
+          <li>Placed trees and crops around the map</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="post" class="sub-panel">
+      <div class="card">
+        <h2>Post game content</h2>
+        <p>Beaten the game? Here is what you can still do:</p>
+        <ul class="clean">
+          <li>go to the mountain in the West</li>
+          <li>collect various ores in those mines</li>
+          <li>convert them to money</li>
+          <li>purchase fun hats at a npc hidden in the snowy area.</li>
+        </ul>
+
+        <!-- CAROUSEL: to add an image, copy a <figure class="slide"> block and change the src. -->
+        <div class="carousel" id="post-carousel">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <figure class="slide">
+                <img src="images/PhoenixShop1.png" alt="Shop 1: Ores">
+                <figcaption>Ores shop</figcaption>
+              </figure>
+              <figure class="slide">
+                <img src="images/PhoenixShop2.png" alt="Shop 2: Hats">
+                <figcaption>Hat Shop</figcaption>
+              </figure>
+              <figure class="slide">
+                <img src="images/PhoenixHat1.png" alt="Hat 1">
+                <figcaption>Hat 1</figcaption>
+              </figure>
+              <figure class="slide">
+                <img src="images/PhoenixHat2.png" alt="Hat 2">
+                <figcaption>Hat 2</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button class="car-btn prev" type="button" aria-label="Previous image">&#10094;</button>
+          <button class="car-btn next" type="button" aria-label="Next image">&#10095;</button>
+          <div class="car-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE -->
+  <section id="code" class="tab-panel">
+    <div class="card">
+      <h2>Code</h2>
+      <p>Some of the C# scripts I wrote for Phoenix Ramp in Unity.</p>
+    </div>
+
+    <div class="card">
+      <div class="code-head">
+        <h3>MiningOres.cs</h3>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <p class="note">What this script does: handles the mining and collecting of ores and respawning</p>
+<pre><code>
+using System.Collections;
+using UnityEngine;
+
+public class MiningOres : MonoBehaviour
+{
+    [SerializeField] OreTypesData oreTypesData;
+    [SerializeField] HandleOresInventory oreInventory;
+    [SerializeField] Sprite originalSprite;
+    [SerializeField] Sprite mediumOreSprite;
+    [SerializeField] Sprite smallOreSprite;
+    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] SpriteRenderer healthBarSprite;
+    private SpriteRenderer spriteRenderer;
+    public float blockStrength;
+    public float currentBlockStrength;
+    public float playerMiningSpeed;
+    //[SerializeField] PlayerData playerData;
+    Rigidbody2D rigidBody;
+    float dropAmount = 0;
+    float fortune = 0;
+    public float fillAmount = 1.25f;
+    [SerializeField] GameObject healthBar1;
+    [SerializeField] GameObject healthBar2;
+    [SerializeField] ParticleSystem breakingOreParticle;
+
+    void Start()
+    {
+        oreInventory = GetComponentInParent<HandleOresInventory>();
+        oreTypesData = GetComponent<OreTypesData>();
+        print(oreTypesData.oreType);
+        //Debug.Log("Ore type: " + oreTypesData.oreType);
+        //playerMiningSpeed = playerData.miningSpeed;
+        rigidBody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        currentBlockStrength = blockStrength;
+    }
+
+    private void Update()
+    {
+        if (currentBlockStrength != blockStrength)
+        {
+            healthBar1.SetActive(true);
+            healthBar2.SetActive(true);
+        }
+        fillAmount = currentBlockStrength / blockStrength;
+        healthBarSprite.transform.localScale = new Vector3(fillAmount, 0.376375f, 1f);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            currentBlockStrength -= 20;
+            breakingOreParticle.Play();
+            BlockHealthUpdate();
+        }
+    }
+
+    void BlockHealthUpdate()
+    {
+        if (currentBlockStrength <= blockStrength * 0.50f)
+        {
+            spriteRenderer.sprite = mediumOreSprite;
+        }
+        if (currentBlockStrength <= blockStrength * 0.25f)
+        {
+            spriteRenderer.sprite = smallOreSprite;
+        }
+        if (currentBlockStrength <= 0)
+        {
+            print("Ik ben dood");
+            if (oreTypesData != null && oreInventory != null)
+            {
+                oreInventory.AddOreToInventory(oreTypesData);
+            }
+            StartCoroutine(RespawnOres());
+        }
+    }
+    IEnumerator RespawnOres()
+    {
+        spriteRenderer.sprite = originalSprite;
+        healthBar1.SetActive(false);
+        healthBar2.SetActive(false);
+        spriteRenderer.enabled = false;
+        boxCollider.enabled = false;
+        //gameObject.SetActive(false);
+        blockStrength = 100;
+        currentBlockStrength = blockStrength;
+        yield return new WaitForSeconds(60f);
+        print("ik leef");
+        spriteRenderer.enabled = true;
+        boxCollider.enabled = true;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="card">
+      <div class="code-head">
+        <h3>PlaceOres.cs</h3>
+        <button class="copy-btn" type="button">Copy</button>
+      </div>
+      <p class="note">What this script does: spawns ores in random positions on the groundTilemap</p>
+<pre><code>
+using UnityEngine;
+using UnityEngine.Tilemaps;
+
+public class PlaceOres : MonoBehaviour
+{
+    [Header("Tilemap")]
+    [SerializeField] private Tilemap groundTilemap;
+
+    [Header("Ore Settings")]
+    [SerializeField] private GameObject[] orePrefabs;
+    [Range(0f, 1f)][SerializeField] private float spawnChance = 0.1f;
+
+    [Header("Parent")]
+    [SerializeField] private Transform oreParent;
+
+    [ContextMenu("Generate Ores")]
+    public void GenerateOres()
+    {
+        ClearOres();
+
+        BoundsInt bounds = groundTilemap.cellBounds;
+
+        for (int x = bounds.xMin; x < bounds.xMax; x++)
+        {
+            for (int y = bounds.yMin; y < bounds.yMax; y++)
+            {
+                Vector3Int cellPosition = new Vector3Int(x, y, 0);
+
+                // Alleen als er een tile ligt
+                if (!groundTilemap.HasTile(cellPosition)) continue;
+
+                // Kans check
+                if (Random.value < spawnChance)
+                {
+                    Vector3 worldPos = groundTilemap.GetCellCenterWorld(cellPosition);
+
+                    // Random ore kiezen
+                    GameObject randomOre = orePrefabs[Random.Range(0, orePrefabs.Length)];
+
+                    Instantiate(randomOre, worldPos, Quaternion.identity, oreParent);
+                }
+            }
+        }
+    }
+
+    private void ClearOres()
+    {
+        for (int i = oreParent.childCount - 1; i >= 0; i--)
+        {
+            Transform child = oreParent.GetChild(i);
+
+            if (Application.isPlaying)
+                Destroy(child.gameObject);
+            else
+                DestroyImmediate(child.gameObject);
+        }
+    }
+}
+</code></pre>
+    </div>
+  </section>
+</main>
+
+<footer>Phoenix Ramp &middot; AGP (Agile Game Production) school project</footer>
+
+<script>
+  // Main tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+  // Sub tabs
+  document.querySelectorAll('.sub-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sub-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.sub-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.sub).classList.add('active');
+    });
+  });
+  // Carousels
+  document.querySelectorAll('.carousel').forEach(car => {
+    const track = car.querySelector('.carousel-track');
+    const slides = car.querySelectorAll('.slide');
+    const dotsBox = car.querySelector('.car-dots');
+    let i = 0;
+    slides.forEach((_, n) => {
+      const d = document.createElement('button');
+      d.type = 'button'; d.className = 'car-dot'; d.setAttribute('aria-label', 'Go to image ' + (n + 1));
+      d.addEventListener('click', () => go(n));
+      dotsBox.appendChild(d);
+    });
+    const dots = dotsBox.querySelectorAll('.car-dot');
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      dots.forEach((d, k) => d.classList.toggle('active', k === i));
+    }
+    car.querySelector('.prev').addEventListener('click', () => go(i - 1));
+    car.querySelector('.next').addEventListener('click', () => go(i + 1));
+    // Swipe on touch screens
+    let startX = null;
+    car.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    car.addEventListener('touchend', e => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+    go(0);
+  });
+  // Copy buttons for code blocks
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.closest('.card').querySelector('pre code').innerText;
+      const done = () => { btn.textContent = 'Copied!'; setTimeout(() => btn.textContent = 'Copy', 1500); };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(code).then(done);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = code; document.body.appendChild(ta); ta.select();
+        document.execCommand('copy'); ta.remove(); done();
+      }
+    });
+  });
+</script>
+</body>
 </html>
